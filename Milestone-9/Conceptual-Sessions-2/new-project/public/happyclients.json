@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "image": "https://example.com/images/user1.jpg",
+    "feedback": "The treatment was exceptional! The staff was friendly, and the results exceeded my expectations. I highly recommend this clinic to anyone looking for professional dental care.",
+    "date": "2024-11-01",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Michael Smith",
+    "image": "https://example.com/images/user2.jpg",
+    "feedback": "Great service overall. The dentist explained the procedure thoroughly, and the results were good. The waiting time was a bit long, though.",
+    "date": "2024-11-03",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Sophia Davis",
+    "image": "https://example.com/images/user3.jpg",
+    "feedback": "The staff was courteous, and the clinic was clean and well-maintained. However, I expected better follow-up after my treatment.",
+    "date": "2024-11-05",
+    "rating": 3
+  },
+  {
+    "id": 4,
+    "name": "James Wilson",
+    "image": "https://example.com/images/user4.jpg",
+    "feedback": "Excellent experience! The dentist was knowledgeable, and the procedure was painless. I will definitely come back for my next appointment.",
+    "date": "2024-11-07",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "Emily Brown",
+    "image": "https://example.com/images/user5.jpg",
+    "feedback": "The clinic was modern and had state-of-the-art equipment. The treatment was fine, but the cost was higher than I expected.",
+    "date": "2024-11-08",
+    "rating": 4
+  },
+  {
+    "id": 6,
+    "name": "kitty peri",
+    "image": "https://example.com/images/user5.jpg",
+    "feedback": "The clinic was modern and had state-of-the-art equipment. The treatment was fine, but the cost was higher than I expected.",
+    "date": "2024-11-18",
+    "rating": 5
+  }
+]

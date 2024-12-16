@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gril layout responsive</title>
+    <!-- <link rel="stylesheet" href="../style/style.css"> -->
+    <style>
+      .container {
+        height: 90vh;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        border: 5px solid red;
+        border-radius: 5px;
+      }
+      .left, .right {
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 800;
+        border: 1px solid lightgray;
+        border-radius: 16px;
+        margin: 10px;
+      }
+      .right {
+        background-color: rgb(239, 207, 158);
+      }
+      
+      /* media-query */
+      /* Mobile */
+      @media screen and (max-width: 576px) {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr ;
+        }
+        .left {
+            height:30vh;
+        }
+        .right{
+            height:50vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">Left</div>
+      <div class="right">Right</div>
+    </div>
+  </body>
+</html>

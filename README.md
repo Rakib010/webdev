@@ -1,0 +1,1 @@
+# Hard work is the key to success 

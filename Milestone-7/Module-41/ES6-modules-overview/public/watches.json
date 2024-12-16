@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "name": "Apple Watch Series 8",
+    "brand": "Apple",
+    "price": 399.99,
+    "features": {
+      "display": "Retina OLED",
+      "sensors": ["Heart Rate", "ECG", "Blood Oxygen"],
+      "waterResistance": "50m",
+      "connectivity": ["GPS", "Wi-Fi", "Bluetooth"],
+      "batteryLife": "18 hours"
+    },
+    "availability": true
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy Watch 6",
+    "brand": "Samsung",
+    "price": 349.99,
+    "features": {
+      "display": "Super AMOLED",
+      "sensors": ["Heart Rate", "Blood Pressure", "SpO2"],
+      "waterResistance": "50m",
+      "connectivity": ["4G LTE", "Wi-Fi", "Bluetooth"],
+      "batteryLife": "40 hours"
+    },
+    "availability": true
+  },
+  {
+    "id": 3,
+    "name": "Fitbit Versa 4",
+    "brand": "Fitbit",
+    "price": 229.99,
+    "features": {
+      "display": "AMOLED",
+      "sensors": ["Heart Rate", "Sleep Tracking", "GPS"],
+      "waterResistance": "50m",
+      "connectivity": ["Wi-Fi", "Bluetooth"],
+      "batteryLife": "6 days"
+    },
+    "availability": false
+  },
+  {
+    "id": 4,
+    "name": "Garmin Venu 2 Plus",
+    "brand": "Garmin",
+    "price": 449.99,
+    "features": {
+      "display": "AMOLED",
+      "sensors": ["Heart Rate", "Pulse Ox", "Body Battery"],
+      "waterResistance": "50m",
+      "connectivity": ["GPS", "Wi-Fi", "Bluetooth"],
+      "batteryLife": "9 days"
+    },
+    "availability": true
+  },
+  {
+    "id": 5,
+    "name": "Amazfit GTR 3 Pro",
+    "brand": "Amazfit",
+    "price": 199.99,
+    "features": {
+      "display": "AMOLED",
+      "sensors": ["Heart Rate", "SpO2", "Stress Monitor"],
+      "waterResistance": "50m",
+      "connectivity": ["GPS", "Bluetooth"],
+      "batteryLife": "12 days"
+    },
+    "availability": true
+  }
+]
+ 

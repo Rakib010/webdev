@@ -1,0 +1,43 @@
+.ekm-product-image-badge-preload{
+	position: absolute;
+	left: -999px;
+	top: -999px;
+}
+
+.ekm-product-image-badge-wrapper{
+	display: inline;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: visible;
+	font-size: 1px;
+}
+.ekm-product-image-badge-wrapper span{
+	width: 0;
+	height: 0;
+	font-size: 1px;
+	overflow: hidden;
+	display: -moz-inline-stack;
+	display: inline-block;
+	*display: none;
+}
+
+.ekm-product-image-badge-wrapper img{
+	position: absolute;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	-ms-interpolation-mode: bicubic;
+	max-width: none;
+}
+
+a + .ekm-product-image-badge-wrapper img{
+	cursor: pointer;
+	max-height: none;
+	max-width: none;
+	left: unset;
+	top: unset;
+	transform: none;
+}

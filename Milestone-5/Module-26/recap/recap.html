@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function makeRed() {
+        console.log("hoise mama");
+      }
+      /*  document
+        .getElementById("change-color")
+        .addEventListener("click", function () {
+          console.log("Hoise Mama 2");
+        }); */
+
+      function newPost() {
+        console.log("click post");
+        const cmnt = document.getElementById("text-baba").value;
+        const p = document.createElement("p");
+        p.innerText = cmnt;
+        // console.log(p);
+        const cmtBaba = document.getElementById("cmt-baba");
+        cmtBaba.appendChild(p);
+        cmnt.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="makeRed()">Event1</button>
+    <button id="change-color">Event2</button>
+
+    <!-- add -->
+    <textarea id="text-baba" cols="30" rows="10"></textarea>
+    <button onclick="newPost()">Post</button>
+    <div id="cmt-baba"></div>
+    <!--  -->
+    <div>
+      <h1 class="id">Info</h1>
+      <input id="input" type="text" />
+      <button id="btn" onclick="deleteKorma()" disabled>Delete</button>
+    </div>
+    <script>
+      function deleteKorma() {
+        const hide = document.getElementById("id");
+      }
+      document.getElementById("input").addEventListener("keyup", function (e) {
+        // console.log('hoise')
+        const text = e.target.value;
+        const btn = document.getElementById("btn");
+        if (text === "delete") {
+          btn.removeAttribute("disabled");
+        } else {
+          btn.getAttribute("disabled", true);
+        }
+      });
+    </script>
+
+    <section id="list-containe  ">
+      <ul id="list-ul">
+        <li id="item-1">Lorem, ipsum.</li>
+        <li id="item-2">Sapiente, cum.</li>
+        <li id="item-3">Voluptas, vel.</li>
+        <li id="item-4">Quis, temporibus.</li>
+        <li id="item-5">Sint, illo.</li>
+        <li id="item-6">Alias, cupiditate.</li>
+      </ul>
+    </section>
+    <script>
+      document.getElementById("item-1").addEventListener("click", function () {
+        console.log("item - 1");
+      });
+
+      document.getElementById("list-ul").addEventListener("click", function () {
+        console.log("all-ul");
+      });
+      document
+        .getElementById("list-container")
+        .addEventListener("click", function () {
+          console.log("container");
+        });
+    </script>
+    <section>
+      <h1>Explore Event Delegate</h1>
+      <ul id="list-container">
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Necessi,soluta volupta?</li>
+        <li class="item">Nemo, quis ullam!</li>
+        <li class="item">Architecto, id consequu!</li>
+        <li class="item">Quibusdam, earum dolor.</li>
+        <li class="item">Quod, exercitationem tenetur.</li>
+      </ul>
+      <button id="btn-add-item">Add Item</button>
+    </section>
+    <script>
+      const items = document.getElementsByClassName("item");
+      for (const item of items) {
+        // console.log(item);
+        item.addEventListener("click", function (e) {
+          // console.log(e.target.parentNode)
+          event.target.parentNode.removeChild(event.target);
+        });
+      }
+      document
+        .getElementById("btn-add-item")
+        .addEventListener("click", function () {
+          const listContainer = document.getElementById("list-container");
+          const li = document.createElement("li");
+          li.innerText = "Yo Yo";
+          li.classList.add = "item";
+          listContainer.appendChild(li);
+        });
+    </script>
+  </body>
+</html>

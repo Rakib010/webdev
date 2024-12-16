@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+.header{
+    margin: 50px;
+    height: 400px;
+    width: auto;
+    background-color: blueviolet;
+    background-image: url('p.jpeg');
+    /* background-repeat: none; */
+     background-size: cover;
+     background-position: center;
+    
+}
+.tag{
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 600;
+    color: yellowgreen;
+}
+h2{
+    text-decoration: underline;
+}
+.div {
+  background: plum;
+  color: rgb(29, 17, 204);
+  border: 5px solid black;
+  border-radius: 8px;
+  margin: 30px;
+  padding: 30px;
+  width: 500px;
+  box-shadow: 5px 5px 10px yellow;
+}
+.blog {
+  background: gray;
+  color: brown;
+  border: 5px solid black;
+  border-radius: 8px;
+  margin: 30px;
+  padding: 30px;
+  width: 500px;
+  /* display: none; */
+  /* visibility: hidden; */
+}

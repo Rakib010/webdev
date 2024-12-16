@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+/*   font-family: "Mulish", sans-serif;
+ */
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+* {
+  margin: 0;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  line-height: normal;
+}
+p {
+  color: rgb(66, 66, 71);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+/* nav-bar-style */
+
+.container {
+  width: 90%;
+  margin: 2rem auto;
+  border-radius: 1rem;
+}
+.span {
+  color: rgb(255, 84, 0);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  margin-right: 1rem;
+}
+.nav-option {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+.nav-option p {
+  cursor: pointer;
+}
+.ham-burger {
+  display: none;
+}
+
+/* Banner-section */
+
+.explore-your-travel {
+  background-image: linear-gradient(
+      180deg,
+      rgba(19, 19, 24, 0.8),
+      rgba(19, 19, 24, 0) 100%
+    ),
+    url(../Images/bannerbg.png);
+  padding: 7rem 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* display: flex;
+  justify-content: center; // ene keno flex us kora holo
+   border-radius: 16px;*/
+}
+.explore-container h3 {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 700;
+}
+.explore-container p {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+  width: 500px;
+  padding: 1rem 0;
+  margin: auto;
+}
+.travel-input {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  /* backdrop-filter: blur(2px); */
+}
+input,
+select {
+  width: 100px;
+  height: 40px;
+  padding: 0 0.5rem;
+  margin: 0 1.2rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0.7rem 0.1rem;
+  color: white;
+  background-color: rgb(255, 84, 0);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+}
+
+/* popular-section */
+
+.popular-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.popular-section img {
+  width: 100%;
+  height: 100%;
+}
+.popular-text {
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 1rem; */
+  justify-content: space-around;
+}
+.popular-text p,
+.popular-text li {
+  color: rgb(90, 90, 93);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  /* letter-spacing: .5px; */
+}
+.popular-text h3 {
+  text-align: left;
+}
+
+/* your-destination */
+.your-destination img {
+  width: 100%;
+  height: 300px;
+  filter: brightness(70%);
+}
+.your-destination h3 {
+  color: rgb(19, 19, 24);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+.p {
+  color: rgba(19, 19, 24, 0.7);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.row-1,
+.row-2,
+.row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem 0;
+  gap: 1.5rem;
+}
+.row-2 {
+  grid-template-columns: 1fr 1.3fr 0.7fr;
+}
+.row-3 {
+  grid-template-columns: 0.75fr 1.25fr;
+}
+.country-card {
+  position: relative;
+}
+.country {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+/* /footer-section */
+
+.footer-section {
+  background: rgba(19, 19, 24, 0.05);
+  padding: 2rem 0;
+}
+.footer-section .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-section p {
+  color: rgb(90, 90, 93);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+.social {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.social i {
+  height: 40px;
+  font-size: 2rem;
+}
+.footer-section hr {
+  margin: 1rem auto;
+}
+
+/* Responsive for mobile */
+
+@media screen and (max-width: 600px) {
+  .nav-option {
+    display: none;
+  }
+  .ham-burger {
+    display: block;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .ham-burger i {
+    font-size: 26px;
+  }
+  .container {
+    margin: 3rem auto;
+  }
+  .explore-container p {
+    width: 80%;
+  }
+  .travel-input {
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+  }
+  .travel-input input,
+  .travel-input select,
+  .travel-input button {
+    width: 100%;
+    margin: 1rem auto;
+  }
+  .popular-section,
+  .row-1,
+  .row-2,
+  .row-3 {
+    grid-template-columns: 1fr;
+  }
+}

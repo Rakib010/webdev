@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop Pro 15",
+    "price": 950,
+    "description": "A high-performance laptop with a full HD display.",
+    "image": "https://i.ibb.co.com/ByrLgmk/01webp.webp"
+  },
+  {
+    "id": 2,
+    "name": "Compact Power Bank 10,000mAh",
+    "price": 55,
+    "description": "Compact power bank for on-the-go charging.",
+    "image": "https://i.ibb.co.com/KXmJL98/13.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Ultrabook S5",
+    "price": 750,
+    "description": "Sleek and lightweight ultrabook for business users.",
+    "image": "https://i.ibb.co.com/kgdQmhG/03.webp"
+  },
+  {
+    "id": 4,
+    "name": "Wireless Charger Stand",
+    "price": 55,
+    "description": "Wireless charger stand compatible with most smartphones.",
+    "image": "https://i.ibb.co.com/JHx2Sz9/12jpg.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Smartphone Z Ultra",
+    "price": 850,
+    "description": "Premium smartphone with advanced camera features.",
+    "image": "https://i.ibb.co.com/XbVzKtL/08.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Workstation Laptop W9",
+    "price": 2200,
+    "description": "Powerful workstation laptop for heavy-duty applications.",
+    "image": "https://i.ibb.co.com/grnNhNk/06.webp"
+  },
+  {
+    "id": 7,
+    "name": "Smartphone X1",
+    "price": 600,
+    "description": "Latest smartphone with high-performance capabilities.",
+    "image": "https://i.ibb.co.com/fDwXDgv/07.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Budget Laptop B1",
+    "price": 400,
+    "description": "Affordable laptop suitable for everyday tasks.",
+    "image": "https://i.ibb.co.com/F3dHXJF/05.webp"
+  },
+  {
+    "id": 9,
+    "name": "Smartwatch Active 4",
+    "price": 300,
+    "description": "Fitness-focused smartwatch with health tracking.",
+    "image": "https://i.ibb.co.com/vQx8VgS/09.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Smartwatch Classic",
+    "price": 200,
+    "description": "Elegant smartwatch with classic design and smart features.",
+    "image": "https://i.ibb.co.com/3MHw308/10.webp"
+  },
+  {
+    "id": 11,
+    "name": "Fast Charger USB-C 30W",
+    "price": 60,
+    "description": "Fast charger with USB-C power delivery for quick charging.",
+    "image": "https://i.ibb.co.com/L6znsSC/11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "2-in-1 Convertible Laptop",
+    "price": 680,
+    "description": "Convertible laptop with touch screen and pen support.",
+    "image": "https://i.ibb.co.com/bJhBF9t/04.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Power Bank 20,000mAh",
+    "price": 70,
+    "description": "High-capacity power bank for long-lasting battery support.",
+    "image": "https://i.ibb.co.com/6NcKxn9/14.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Gaming Laptop G7",
+    "price": 1300,
+    "description": "High-performance gaming laptop with RGB keyboard.",
+    "image": "https://i.ibb.co.com/mTbbMFN/dell-g7-15-gaming-laptop-3.jpg"
+  }
+]

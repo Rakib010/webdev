@@ -1,0 +1,116 @@
+.ekm-product-video-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 99999;
+	cursor: pointer;
+}
+
+
+.ekm-product-video-modal {
+	background: #000;
+	flex-grow: 1;
+	min-height: 0;
+	overflow: auto;
+}
+
+.ekm-product-video-modal-close {
+	text-align: center;
+	padding: 25px 5px;
+	background: #000;
+	color: #fff;
+}
+
+.ekm-product-video-modal-close-btn {
+	display: inline-block;
+	border: 1px solid #fff;
+	padding: 10px 10%;
+	border-radius: 4px;
+	transition: background-color 0.1s;
+}
+
+.ekm-product-video-modal-close-btn:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.ekm-product-video-screen.full-screen .ekm-product-video-modal-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 0;
+	height: 0;
+	background: none;
+	padding: 0;
+}
+
+.ekm-product-video-screen.full-screen .ekm-product-video-modal-close-btn {
+	display: none;
+}
+
+.ekm-product-video-screen.full-screen .ekm-product-video-modal-close::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top:0;
+	width: 20px;
+	height: 20px;
+	background: #000 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><line x1="0" y1="0" x2="20" y2="20" stroke="white" stroke-width="2" /><line x1="20" y1="0" x2="0" y2="20" stroke="white" stroke-width="2" /></svg>');
+	border-radius: 10px;
+}
+
+.ekm-product-video-wrapper {
+	position: relative;
+	background-position: 0 0;
+	background-size: cover;
+	background-repeat: none;
+}
+
+.ekm-product-video-error {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: #000;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ekm-product-video-error p {
+	color: #fff;
+	margin: auto;
+}
+
+.ekm-product-video-error p:nth-of-type(2) {
+	font-size: 0.8em;
+}
+
+a[data-video^="{"] {
+	position: relative;
+	display: inline-block;
+}
+
+a[data-video^="{"]::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(/ekmps/assets/images/edititem/play-circle.svg) center center no-repeat;
+	background-size: contain;
+	pointer-events: none;
+	opacity: 0.75;
+}

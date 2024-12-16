@@ -1,0 +1,54 @@
+(function(){
+
+function init(){
+	if (window.jQuery) {
+	  bindChangeEvents();
+	} 
+	else {
+	  const script = document.createElement("script");
+	  script.src = 'https://cdn.ekmsecure.com/js/jquery/latest/jquery.min.js';
+	  script.type = 'text/javascript';
+	  script.addEventListener('load', () => {
+		bindChangeEvents();
+	  });
+	  document.head.appendChild(script);
+	}
+}
+
+function onChange(){
+
+	var sortBy = jQuery(this).val();
+	var url = new URL(window.location.href);
+	url.searchParams.delete('page');
+	url.searchParams.set('reviewsort', sortBy);
+
+	var spinnerContainer = jQuery('<div class="spinnerContainer"><div class="spinner"></div></div>');
+
+	jQuery('.ekm-product-reviews-wrapper').css('position', 'relative').append(spinnerContainer);
+
+	jQuery('.ekm-product-reviews-wrapper').load(url.href + ' .ekm-product-reviews-wrapper>*', function(){
+		jQuery('.js-ekm-review-sort').val(sortBy);
+		bindChangeEvents();
+
+		var all_ratings = document.querySelectorAll(".rating-wrapper")
+		  , all_ratings_arr = Array.prototype.slice.call(all_ratings);
+		all_ratings_arr.forEach(function(e) {
+		    var t = e.children[1].dataset.rating
+		      , o = e.children[1]
+		      , i = 2 * t * 10
+		      , a = i / 100 * 125
+		      , a = a - 3;
+		    o.style.clip = "rect(0px," + a + "px, 50px, 0px)"
+		});
+	});
+}
+
+function bindChangeEvents(){
+	jQuery('.js-ekm-review-sort').each(function(index) {
+		jQuery(this).on('change', onChange);
+	});
+}
+
+window.addEventListener('DOMContentLoaded', init);
+
+})();

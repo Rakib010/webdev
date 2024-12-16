@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1 class="text-3xl text-center my-5 font-bold">Daraz Lite</h1>
+    <div class="w-[80%] text-center mx-auto mb-8">
+      <textarea
+        name=""
+        id="text-area"
+        placeholder="leave a review"
+        class="border-2 mx-auto textarea-lg w-96"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="text-end w-[45%] mx-auto">
+      <button id="submit-btn" class="btn btn-success btn-sm">Submit</button>
+    </div>
+    <div id="review" class="user-review w-96 mx-auto">
+      <h1 class="text-3xl font-bold text-red-600">User Review...</h1>
+    </div>
+    
+    <script src="./app.js"></script>
+  </body>
+</html>
