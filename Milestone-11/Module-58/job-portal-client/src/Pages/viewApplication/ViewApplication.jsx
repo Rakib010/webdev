@@ -8,13 +8,16 @@ const ViewApplication = () => {
     const data = {
       status: e.target.value,
     };
-    fetch(`http://localhost:5000/job-application/${id}`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://job-portal-server-eta-six.vercel.app/job-application/${id}`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

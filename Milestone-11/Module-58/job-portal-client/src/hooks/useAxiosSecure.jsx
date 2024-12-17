@@ -1,36 +1,31 @@
 import axios from "axios";
 import { useEffect } from "react";
 import useAuth from "./UseAuth";
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://job-portal-server-eta-six.vercel.app",
   withCredentials: true,
 });
 
 const useAxiosSecure = () => {
-  const { logOut } = useAuth();
+  const { logout } = useAuth();
   const navigate = useNavigate();
-
   useEffect(() => {
     axiosInstance.interceptors.response.use(
       (response) => {
         return response;
       },
       (error) => {
-        console.log("error caught in interceptor");
-        //
         if (error.status === 401 || error.status === 403) {
-          console.log("need to log out user");
-
-          // logout
-          logOut()
+          logout()
             .then(() => {
-              console.log("logged out user");
+              // redirect login page
               navigate("/login");
             })
-            .catch((error) => console.log(error));
+            .catch((err) => console.log(err));
         }
+
         return Promise.reject(error);
       }
     );
@@ -40,3 +35,11 @@ const useAxiosSecure = () => {
 };
 
 export default useAxiosSecure;
+
+/*
+ 1. axios: get,post,put/patch,delete ---> easier
+ 2. interceptor: client ------|------>  server 
+ 3. client <----------|---------server
+ 4. in the interceptor for response === 
+
+*/

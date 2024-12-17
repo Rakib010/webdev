@@ -24,7 +24,7 @@ const Apply = () => {
       cvFile,
     };
 
-    fetch("http://localhost:5000/job-application", {
+    fetch("https://job-portal-server-eta-six.vercel.app/job-application", {
       method: "POST",
       headers: {
         "content-type": "application/json",

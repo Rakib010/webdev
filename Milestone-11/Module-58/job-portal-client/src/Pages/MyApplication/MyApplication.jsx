@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/UseAuth";
-import axios from "axios";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyApplication = () => {
@@ -10,7 +9,7 @@ const MyApplication = () => {
 
   useEffect(() => {
     // regular way fetch data
-    /* fetch(`http://localhost:5000/job-application?email=${user.email}`)
+    /* fetch(`https://job-portal-server-eta-six.vercel.app/job-application?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
@@ -23,11 +22,11 @@ const MyApplication = () => {
 
     // using axios only
     /* axios
-      .get(`http://localhost:5000/job-application?email=${user.email}`, {
+      .get(`https://job-portal-server-eta-six.vercel.app/job-application?email=${user.email}`, {
         withCredentials: true,
       })
       .then((res) => setJobs(res.data)) */
-  }, [user.email]);
+  }, [user?.email]);
 
   return (
     <div>
