@@ -14,7 +14,7 @@ const HotJobCard = ({ job }) => {
     requirements,
     company_logo,
     _id,
-  } = job;
+  } = job || {};
 
   return (
     <div className="max-w-sm rounded-lg shadow-lg bg-white border border-gray-200 p-4">
@@ -45,14 +45,15 @@ const HotJobCard = ({ job }) => {
 
       {/* Requirements */}
       <div className="flex flex-wrap gap-2 mb-4">
-        {requirements.map((skill, index) => (
-          <span
-            key={index}
-            className="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-full"
-          >
-            {skill}
-          </span>
-        ))}
+        {requirements &&
+          requirements.map((skill, index) => (
+            <span
+              key={index}
+              className="bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-full"
+            >
+              {skill}
+            </span>
+          ))}
       </div>
 
       {/* Footer */}

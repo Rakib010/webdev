@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/UseAuth";
 import axios from "axios";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyApplication = () => {
   const { user } = useAuth();
   const [jobs, setJobs] = useState([]);
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
+    // regular way fetch data
     /* fetch(`http://localhost:5000/job-application?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
       }) */
 
-    axios
+    // using axios with custom hook
+    axiosSecure
+      .get(`/job-application?email=${user.email}`)
+      .then((res) => setJobs(res.data));
+
+    // using axios only
+    /* axios
       .get(`http://localhost:5000/job-application?email=${user.email}`, {
         withCredentials: true,
       })
-      .then((res) => setJobs(res.data))
-
-      .catch((error) => {
-        console.error("Error fetching jobs:", error);
-      });
+      .then((res) => setJobs(res.data)) */
   }, [user.email]);
 
   return (
@@ -39,7 +44,7 @@ const MyApplication = () => {
           </thead>
           <tbody>
             {jobs.map((job) => (
-              <tr>
+              <tr key={job._id}>
                 <th>
                   <label>
                     <input type="checkbox" className="checkbox" />
