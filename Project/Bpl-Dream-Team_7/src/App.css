@@ -1,0 +1,26 @@
+.bg-img {
+  background: linear-gradient(
+      to right,
+      rgba(0, 153, 255, 0.2),
+      rgba(255, 204, 204, 0.3)
+    ),
+    url(./assets/assets/bg-shadow.png);
+  height: 430px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.active {
+  background-color: #e7fe29;
+  color: black;
+}
+
+/* .bg-footer {
+  background-image: url(./assets/assets/bg-shadow.png);
+  height: 300px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+ */

@@ -29,45 +29,50 @@ const MyApplication = () => {
   }, [user?.email]);
 
   return (
-    <div>
-      Job Applications: {jobs.length}
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">My Job Applications</h1>
+      <p className="mb-4 text-gray-600">Total Applications: {jobs.length}</p>
+
       <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
+        <table className="table w-full border-separate border-spacing-2">
+          {/* Table Head */}
+          <thead className="bg-gray-100">
             <tr>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Action</th>
+              <th className="p-4">Select</th>
+              <th className="p-4">Job Details</th>
+              <th className="p-4">Actions</th>
             </tr>
           </thead>
           <tbody>
             {jobs.map((job) => (
-              <tr key={job._id}>
-                <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th>
-                <td>
+              <tr key={job._id} className="hover:bg-gray-50">
+                <td className="p-4">
+                  <input type="checkbox" className="checkbox" />
+                </td>
+                <td className="p-4">
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle h-12 w-12">
                         <img
                           src={job.company_logo}
-                          alt="Avatar Tailwind CSS Component"
+                          alt={`Logo of ${job.title}`}
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{job.title}</div>
-                      <div className="text-sm opacity-50">{job.location}</div>
+                      <div className="font-semibold text-lg">{job.title}</div>
+                      <div className="text-sm text-gray-500">
+                        {job.location}
+                      </div>
                     </div>
                   </div>
                 </td>
-                <th>
-                  <button className="btn btn-ghost btn-xs">Delete</button>
-                </th>
+                <td className="p-4">
+                  <button className="btn btn-ghost btn-xs text-red-600 hover:bg-red-100">
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import useAuth from "./UseAuth";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
   baseURL: "https://job-portal-server-eta-six.vercel.app",

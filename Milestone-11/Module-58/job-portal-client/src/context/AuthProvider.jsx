@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("user capture", currentUser?.email);
+     // console.log("user capture", currentUser?.email);
 
       // token create client side
       if (currentUser?.email) {
@@ -44,7 +44,7 @@ const AuthProvider = ({ children }) => {
             withCredentials: true,
           })
           .then((res) => {
-            console.log("Login Token", res.data);
+          //  console.log("Login Token", res.data);
             setLoading(false);
           });
       } else {
@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
             { withCredentials: true }
           )
           .then((res) => {
-            console.log("Logout Token", res.data);
+           // console.log("Logout Token", res.data);
             setLoading(false);
           });
       }

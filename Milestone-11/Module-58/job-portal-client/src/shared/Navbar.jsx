@@ -11,31 +11,75 @@ const Navbar = () => {
       .then(() => console.log("Log Out"))
       .catch((error) => console.log("Error Log Out"));
   };
+
   const links = (
     <>
       <li>
-        <NavLink>Home</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          }
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/myApplication">My Application</NavLink>
+        <NavLink
+          to="/allJob"
+          className={({ isActive }) =>
+            isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          }
+        >
+          All job
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/addJob">Add A Job</NavLink>
+        <NavLink
+          to="/myApplication"
+          className={({ isActive }) =>
+            isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          }
+        >
+          My Application
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/myPostedJob">My Posted Job</NavLink>
+        <NavLink
+          to="/addJob"
+          className={({ isActive }) =>
+            isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          }
+        >
+          Add A Job
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/myPostedJob"
+          className={({ isActive }) =>
+            isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          }
+        >
+          My Posted Job
+        </NavLink>
       </li>
     </>
   );
+
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="bg-gray-50 border rounded-sm mb-8">
+      <div className="navbar container mx-auto px-4 lg:px-8 py-3">
+        {/* Navbar Start */}
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <button
+              tabIndex={0}
+              className="btn btn-ghost lg:hidden focus:outline-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-6 w-6 text-gray-700"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -47,38 +91,51 @@ const Navbar = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
-            </div>
+            </button>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content mt-3 w-52 bg-white rounded-md shadow-lg z-10"
             >
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            <img className="w-10" src={logo} alt="" />
-            <h2>Job Portal</h2>
-          </a>
+          <Link
+            to="/"
+            className="flex items-center gap-2 btn btn-ghost text-xl"
+          >
+            <img className="w-10" src={logo} alt="Logo" />
+            <h2 className="font-bold text-gray-800">Job Portal</h2>
+          </Link>
         </div>
+        {/* Navbar Center */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal space-x-6">{links}</ul>
         </div>
-        <div className="navbar-end">
+        {/* Navbar End */}
+        <div className="navbar-end space-x-4">
           {user ? (
-            <>
-              <button onClick={handleLogOut} className="btn">
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={handleLogOut}
+                className="btn btn-primary btn-sm rounded-md"
+              >
                 Log Out
               </button>
-            </>
+              <img
+                src={user?.photoURL}
+                alt="User Avatar"
+                className="w-10 h-10 rounded-full border border-gray-300"
+              />
+            </div>
           ) : (
-            <>
-              <Link to="/register" className="btn">
+            <div className="flex space-x-3">
+              <Link to="/register" className="btn btn-outline btn-sm">
                 Register
               </Link>
-              <Link to="/login" className="btn">
-                LogIn
+              <Link to="/login" className="btn btn-primary btn-sm">
+                Log In
               </Link>
-            </>
+            </div>
           )}
         </div>
       </div>

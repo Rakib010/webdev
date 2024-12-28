@@ -1,12 +1,12 @@
 import Lottie from "lottie-react";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerLottieData from "../../assets/lottie/register.json";
 import AuthContext from "../../context/AuthContext";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,7 +20,7 @@ const Register = () => {
     };
 
     // password validation
-   /*  const passwordRegex =
+    /*  const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,}$/;
 
     if (passwordRegex.test(password)) {
@@ -29,9 +29,12 @@ const Register = () => {
     }
  */
     createUser(email, password)
-      .then((res) => console.log(res.user))
+      .then((res) => {
+       // console.log(res.user);
+        navigate("/");
+      })
       .catch((error) => {
-        console.log(error.message);
+       // console.log(error.message);
       });
   };
 

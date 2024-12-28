@@ -10,11 +10,7 @@ const port = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://job-portal-65f4d.web.app",
-      "https://job-portal-65f4d.firebaseapp.com",
-    ],
+    origin: ["http://localhost:5173", "https://erratic-dinosaurs.surge.sh"],
     credentials: true,
   })
 );
@@ -86,14 +82,37 @@ async function run() {
 
     // get data from database
     app.get("/jobs", async (req, res) => {
-      //
       const email = req.query.email;
+      const sort = req.query?.sort;
+      const search = req.query?.search;
+      const min = req.query?.min;
+      const max = req.query?.max;
+
       let query = {};
+      let sortQuery = {};
+
       if (email) {
         query = { hr_email: email };
       }
+      //sort()
+      if (sort == "true") {
+        sortQuery = { salaryRange: -1 };
+      }
+      //search
+      if (search) {
+        query.location = { $regex: search, $options: "i" };
+      }
+      // min,max salary ranges wise search
+      if (min && max) {
+        query = {
+          ...query,
+          "salaryRange.min": { $gte: parseInt(min) },
+          "salaryRange.max": { $lte: parseInt(max) },
+        };
+      }
+
       //
-      const cursor = jobsCollection.find(query);
+      const cursor = jobsCollection.find(query).sort(sortQuery);
       const result = await cursor.toArray();
       res.send(result);
     });

@@ -33,7 +33,7 @@ const Apply = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         alert("Job Application Done ");
         navigate("/myApplication");
       });

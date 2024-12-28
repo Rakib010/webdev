@@ -15,30 +15,43 @@ const MyPostJob = () => {
   }, [user?.email]);
 
   return (
-    <div>
-      post job {jobs.length}
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <h1 className="text-2xl font-bold mb-4">My Posted Jobs</h1>
+      <p className="mb-4 text-gray-600">Total Posted Jobs: {jobs.length}</p>
+
       <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
+        <table className="table w-full border-collapse border border-gray-200">
+          {/* Table Head */}
+          <thead className="bg-gray-100">
             <tr>
-              <th></th>
-              <th>Job Title</th>
-              <th>Deadline</th>
-              <th>Application Count </th>
-              <th>view Application</th>
+              <th className="p-4 border border-gray-200">#</th>
+              <th className="p-4 border border-gray-200">Job Title</th>
+              <th className="p-4 border border-gray-200">Deadline</th>
+              <th className="p-4 border border-gray-200">Applications</th>
+              <th className="p-4 border border-gray-200">Actions</th>
             </tr>
           </thead>
           <tbody>
             {jobs.map((job, index) => (
-              <tr key={index}>
-                <th>{index + 1}</th>
-                <td>{job.title}</td>
-                <td>{job.applicationDeadline}</td>
-                <td>{job.applicationCount}</td>
-                <td>
+              <tr
+                key={index}
+                className="hover:bg-gray-50 transition-all duration-200"
+              >
+                <td className="p-4 border border-gray-200 text-center">
+                  {index + 1}
+                </td>
+                <td className="p-4 border border-gray-200">{job.title}</td>
+                <td className="p-4 border border-gray-200">
+                  {job.applicationDeadline}
+                </td>
+                <td className="p-4 border border-gray-200 text-center">
+                  {job.applicationCount}
+                </td>
+                <td className="p-4 border border-gray-200 text-center">
                   <Link to={`/viewApplication/${job._id}`}>
-                    <button className="btn btn-link">View Application</button>
+                    <button className="btn btn-primary btn-sm">
+                      View Applications
+                    </button>
                   </Link>
                 </td>
               </tr>

@@ -21,9 +21,10 @@ const Login = () => {
     //handle authentication logic here
     loginUser(email, password)
       .then((result) => {
-        console.log("login", result.user.email);
+        // console.log("login", result.user.email);
 
-        //send req post (token)
+        navigate("/");
+        //send req post (token )
         /*   const user = { email: result.user.email };
         axios
           .post("https://job-portal-server-eta-six.vercel.app/jwt", user, {
