@@ -14,7 +14,7 @@ const Review = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("review.json")
+    fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -48,7 +48,9 @@ const Review = () => {
                   "{review.details}"
                 </p>
                 {/* Reviewer Name */}
-                <p className="text-gray-800 text-3xl font-semibold">{review.name}</p>
+                <p className="text-gray-800 text-3xl font-semibold">
+                  {review.name}
+                </p>
               </div>
             </SwiperSlide>
           ))}
