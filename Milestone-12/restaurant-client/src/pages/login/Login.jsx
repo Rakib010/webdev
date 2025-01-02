@@ -138,7 +138,8 @@ const Login = () => {
 
             {/* Sign In Button */}
             <button
-              disabled={disabled}
+              /*  disabled={disabled} */
+              disabled={false}
               type="submit"
               className={`w-full text-white font-semibold py-2 rounded-md ${
                 disabled
