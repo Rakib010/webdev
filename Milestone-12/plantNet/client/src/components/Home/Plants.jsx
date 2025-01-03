@@ -8,7 +8,7 @@ const Plants = () => {
     queryKey: ["plants"],
     queryFn: async () => {
       //get data
-      const { data } = await axios(`${import.meta.env.VITE_API_URL}/plants`);
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/plants`);
       return data;
     },
   });
