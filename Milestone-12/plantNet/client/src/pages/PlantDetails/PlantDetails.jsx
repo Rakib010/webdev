@@ -27,7 +27,7 @@ const PlantDetails = () => {
       return data;
     },
   });
-  console.log(plant);
+ // console.log(plant);
   const closeModal = () => {
     setIsOpen(false);
   };

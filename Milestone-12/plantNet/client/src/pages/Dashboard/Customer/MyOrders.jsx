@@ -16,13 +16,11 @@ const MyOrders = () => {
   } = useQuery({
     queryKey: ["orders", user?.email],
     queryFn: async () => {
-      const { data } = await axiosSecure.get(
-        `/customer-orders/${user?.email}`
-      );
+      const { data } = await axiosSecure.get(`/customer-orders/${user?.email}`);
       return data;
     },
   });
-  //console.log(orders);
+  //  console.log(orders);
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -90,6 +88,7 @@ const MyOrders = () => {
                     <CustomerOrderDataRow
                       key={orderData._id}
                       orderData={orderData}
+                      refetch={refetch}
                     />
                   ))}
                 </tbody>
