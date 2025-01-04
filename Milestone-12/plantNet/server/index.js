@@ -96,7 +96,7 @@ async function run() {
       res.send(result);
     });
 
-    // save or update user in db
+    // save or update a user in db
     app.post("/user/:email", async (req, res) => {
       const email = req.params.email;
       const query = { email };
@@ -114,6 +114,33 @@ async function run() {
         timestamp: Date.now(),
       });
       res.send(result);
+    });
+
+    // manage user status and roll
+    app.patch("/users/:email", verifyToken, async (req, res) => {
+      const email = req.params.email;
+      const query = { email };
+      const user = await useCollection.findOne(query);
+      if (!user || user?.status === "requested") {
+        return res
+          .status(400)
+          .send("You have already requested wait for some time");
+      }
+
+      const updateDoc = {
+        $set: {
+          status: "requested",
+        },
+      };
+      const result = await useCollection.updateOne(query, updateDoc);
+      res.send(result);
+    });
+
+    //get user role
+    app.get("/users/role/:email", async (req, res) => {
+      const email = req.params.email;
+      const result = await useCollection.findOne({ email });
+      res.send({ role: result?.role });
     });
 
     // get a plant by id(specif plant)
@@ -134,12 +161,18 @@ async function run() {
     // Manage plant quantity
     app.patch("/plants/quantity/:id", verifyToken, async (req, res) => {
       const id = req.params.id;
-      const { quantityToUpdate } = req.body;
+      const { quantityToUpdate, status } = req.body;
       const filter = { _id: new ObjectId(id) };
       // decrease quantity (after order)
       let updateDoc = {
         $inc: { quantity: -quantityToUpdate },
       };
+      // increase quantity after cancel order
+      if (status === "increase") {
+        updateDoc = {
+          $inc: { quantity: quantityToUpdate },
+        };
+      }
       const result = await plantsCollection.updateOne(filter, updateDoc);
       res.send(result);
     });
@@ -149,12 +182,63 @@ async function run() {
       const email = req.params.email;
       const query = { "customer.email": email };
       /* const result = await ordersCollection.find(query).toArray(); */
-      // using aggregate 
-      const result = await ordersCollection.aggregate({
-        
+      // using aggregate
+      const result = await ordersCollection
+        .aggregate([
+          {
+            // match specific customers data only by email
+            $match: { "customer.email": email },
+          },
+          {
+            $addFields: {
+              // convert plantId string field to objectId filed
+              plantId: { $toObjectId: "$plantId" },
+            },
+          },
+          {
+            //go to a different collection and look for data
+            $lookup: {
+              from: "plants", // collection name
+              localField: "plantId", // local data that you want to match
+              foreignField: "_id", // foreign field name of that same data
+              as: "plants", // return the data as plants array (array naming)
+            },
+          },
+          // unwind lookup result, return without array
+          { $unwind: "$plants" },
+          {
+            $addFields: {
+              // add these field in order object
+              name: "$plants.name",
+              image: "$plants.image",
+              category: "$plants.category",
+            },
+          },
+          {
+            // remove plants object property from order object
+            $project: {
+              plants: 0,
+            },
+          },
+        ])
+        .toArray();
 
-      }).toArray()
-  
+      res.send(result);
+    });
+
+    // cancel/delete specific a customer an order
+    app.delete("/orders/:id", verifyToken, async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      // status change
+      const order = await ordersCollection.findOne(query);
+      if (order.status === "Delivered") {
+        return res
+          .status(409)
+          .send("Cannot cancel once the product is delivered!");
+      }
+      //delete
+      const result = await ordersCollection.deleteOne(query);
       res.send(result);
     });
 
