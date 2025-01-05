@@ -3,8 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosPublic from "./../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Register = () => {
+  const axiosPublic = useAxiosPublic();
+
   /* form submit  */
   const {
     register,
@@ -21,16 +25,24 @@ const Register = () => {
       console.log(res.user);
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
-          console.log("user Profile Info Update ");
-          reset();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "User crater Successfully",
-            showConfirmButton: false,
-            timer: 1000,
+          // create user entry in the database
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "User crater Successfully",
+                showConfirmButton: false,
+                timer: 1000,
+              });
+              navigate("/");
+            }
           });
-          navigate("/");
         })
         .catch((err) => {
           console.log(err);
@@ -73,7 +85,7 @@ const Register = () => {
               <input
                 id="name"
                 name="name"
-                {...register("p hotoURl", { required: true })}
+                {...register("photoURl", { required: true })}
                 type="text"
                 placeholder="photoURL"
                 className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -146,6 +158,9 @@ const Register = () => {
               className="w-full bg-yellow-500 text-white font-semibold py-2 rounded-md hover:bg-yellow-600 cursor-pointer"
             />
           </form>
+          <div className="flex justify-center items-center my-4">
+            <SocialLogin />
+          </div>
           {/* Link to Login */}
           <p className="text-center text-sm mt-4 text-gray-500">
             Already registered?{" "}

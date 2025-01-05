@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
+
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [cart] = useCart();
@@ -36,11 +37,13 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/dashboard/cart" className="hover:text-yellow-400">
-          <button className="btn">
-            <FaShoppingCart />
-            <div className="badge badge-secondary">{cart?.length}</div>
-          </button>
+        <Link
+          to="/dashboard/cart"
+          className="hover:text-yellow-400 flex items-center"
+        >
+          <FaShoppingCart className="mr-1" />
+          <span>Cart</span>
+          <div className="badge badge-secondary ml-1">{cart?.length}</div>
         </Link>
       </li>
       <li>
@@ -65,7 +68,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar fixed top-0 z-50 bg-opacity-80 bg-gray-900 text-white shadow-lg">
-      <div className="navbar-start">
+      {/* Navbar Start */}
+      <div className="navbar-start flex items-center">
+        {/* Mobile Dropdown */}
         <div className="dropdown">
           <button
             tabIndex={0}
@@ -93,19 +98,22 @@ const Navbar = () => {
             {navList}
           </ul>
         </div>
+        {/* Logo */}
         <Link
           to="/"
-          className="text-xl font-bold tracking-wider text-yellow-400"
+          className="text-xl font-bold tracking-wider text-yellow-400 ml-2"
         >
           Khabar Lagbo!
         </Link>
       </div>
 
+      {/* Navbar Center */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal space-x-4 text-lg">{navList}</ul>
+        <ul className="menu menu-horizontal space-x-6 text-lg">{navList}</ul>
       </div>
 
-      <div className="navbar-end">
+      {/* Navbar End */}
+      <div className="navbar-end flex items-center">
         <button className="btn bg-yellow-400 text-black hover:bg-yellow-500">
           Contact Us
         </button>

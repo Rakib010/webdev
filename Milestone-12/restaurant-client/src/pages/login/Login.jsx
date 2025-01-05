@@ -8,6 +8,7 @@ import useAuth from "../../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
@@ -150,6 +151,10 @@ const Login = () => {
               Login
             </button>
           </form>
+          {/* social login */}
+          <div className="flex justify-center items-center my-4">
+            <SocialLogin />
+          </div>
 
           <p className="text-center text-sm mt-4 text-gray-500">
             New Here?{" "}
