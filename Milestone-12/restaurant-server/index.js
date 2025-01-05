@@ -2,11 +2,14 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 5000;
 
 //middleware
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.bmcuq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
@@ -28,6 +31,28 @@ async function run() {
     const menuCollection = database.collection("menu");
     const reviewCollection = database.collection("review");
     const cartCollection = database.collection("carts");
+    const userCollection = database.collection("users");
+
+    // generate jwt
+    app.post("/jwt", async (req, res) => {
+      const user = req.body;
+      const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+        expiresIn: "1h",
+      });
+      res.send({ token });
+    });
+
+    // verify Token middlewares
+
+    const verifyToken = (req, res, next) => {
+      console.log("inside verify token ", req.headers);
+      if (!req.headers.authorization) {
+        return res.status(401).send({ message: "forbidden access" });
+      }
+      const token = req.headers.authorization.split("")[1];
+
+      next();
+    };
 
     // menu data
     app.get("/menu", async (req, res) => {
@@ -61,6 +86,50 @@ async function run() {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
       const result = await cartCollection.deleteOne(query);
+      res.send(result);
+    });
+
+    // users collection
+    app.post("/users", async (req, res) => {
+      const user = req.body;
+
+      // insert email if user doesn't exists
+      // you can do this many ways (email unique, upsert, simple checking)
+      const query = { email: user.email };
+      const existingUser = await userCollection.findOne(query);
+      if (existingUser) {
+        return res.send({ message: "user already exists" });
+      }
+
+      const result = await userCollection.insertOne(user);
+      res.send(result);
+    });
+
+    // users data get
+    app.get("/users", async (req, res) => {
+      // console.log(req.headers);
+      const result = await userCollection.find().toArray();
+      res.send(result);
+    });
+
+    // specific user delete (all users)
+    app.delete("/users/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await userCollection.deleteOne(query);
+      res.send(result);
+    });
+
+    // make admin
+    app.patch("/users/admin/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const updateDoc = {
+        $set: {
+          role: "admin",
+        },
+      };
+      const result = await userCollection.updateOne(filter, updateDoc);
       res.send(result);
     });
 
