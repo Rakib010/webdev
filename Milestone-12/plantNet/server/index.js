@@ -83,6 +83,32 @@ async function run() {
       }
     });
 
+    // verify admin (middleware)
+    const verifyAdmin = async (req, res, next) => {
+      const email = req.user?.email;
+      const query = { email };
+      const result = await useCollection.findOne(query);
+      if (!result || result?.role !== "admin") {
+        return res
+          .status(403)
+          .send({ message: "Forbidden Access! Admin Only Actions!" });
+      }
+      next();
+    };
+
+    // verify seller (middleware)
+    const verifySeller = async (req, res, next) => {
+      const email = req.user?.email;
+      const query = { email };
+      const result = await useCollection.findOne(query);
+      if (!result || result?.role !== "seller") {
+        return res
+          .status(403)
+          .send({ message: "Forbidden Access! Seller Only Actions!" });
+      }
+      next();
+    };
+
     // save a plant data  in db
     app.post("/plants", verifyToken, async (req, res) => {
       const plant = req.body;
@@ -97,7 +123,7 @@ async function run() {
     });
 
     // save or update a user in db
-    app.post("/user/:email", async (req, res) => {
+    app.post("/users/:email", async (req, res) => {
       const email = req.params.email;
       const query = { email };
       const user = req.body;
@@ -134,13 +160,6 @@ async function run() {
       };
       const result = await useCollection.updateOne(query, updateDoc);
       res.send(result);
-    });
-
-    //get user role
-    app.get("/users/role/:email", async (req, res) => {
-      const email = req.params.email;
-      const result = await useCollection.findOne({ email });
-      res.send({ role: result?.role });
     });
 
     // get a plant by id(specif plant)
@@ -241,6 +260,44 @@ async function run() {
       const result = await ordersCollection.deleteOne(query);
       res.send(result);
     });
+
+    //get user role
+    app.get("/users/role/:email", async (req, res) => {
+      const email = req.params.email;
+      console.log("email", email);
+      const result = await useCollection.findOne({ email });
+      console.log("result", result);
+      res.send({ role: result?.role });
+    });
+
+    // get all user data
+    app.get("/All-Users/:email", verifyToken, verifyAdmin, async (req, res) => {
+      const email = req.params.email;
+      // admin nijer email chara sobi email show korbe
+      const query = { email: { $ne: email } };
+      const result = await useCollection.find(query).toArray();
+      res.send(result);
+    });
+
+    // update user roll & status (admin side)
+    app.patch(
+      "/user/role/:email",
+      verifyToken,
+      verifyAdmin,
+      async (req, res) => {
+        const email = req.params.email;
+        const { role } = req.body;
+        const filter = { email };
+        const updateDoc = {
+          $set: {
+            role,
+            status: "verified",
+          },
+        };
+        const result = await useCollection.updateOne(filter, updateDoc);
+        res.send(result);
+      }
+    );
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
