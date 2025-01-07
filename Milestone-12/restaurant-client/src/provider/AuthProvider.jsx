@@ -70,7 +70,7 @@ const AuthProvider = ({ children }) => {
     return () => {
       return unSubscribe;
     };
-  }, []);
+  }, [axiosPublic]);
 
   // google login
   const googleProvider = new GoogleAuthProvider();

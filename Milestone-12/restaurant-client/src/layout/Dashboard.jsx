@@ -11,9 +11,13 @@ import {
   FaUtensils,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
+import useCart from "./../hooks/useCart";
 
 const Dashboard = () => {
-  const isAdmin = true;
+  const [cart] = useCart();
+
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="flex">
@@ -97,7 +101,7 @@ const Dashboard = () => {
                   <FaShoppingCart />
                   <span>My Cart</span>
                   {/* Assuming cart.length is available */}
-                  <span>({cart.length})</span>
+                  <span>({cart?.length})</span>
                 </NavLink>
               </li>
               <li>
