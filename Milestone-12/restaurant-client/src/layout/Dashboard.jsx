@@ -86,11 +86,11 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboard/reservation"
+                  to="/dashboard/PaymentHistory"
                   className="flex items-center space-x-2 hover:bg-orange-500 p-2 rounded-md"
                 >
                   <FaCalendar />
-                  <span>Reservation</span>
+                  <span>Payment History</span>
                 </NavLink>
               </li>
               <li>

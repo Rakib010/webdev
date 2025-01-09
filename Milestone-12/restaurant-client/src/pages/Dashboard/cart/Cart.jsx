@@ -1,8 +1,9 @@
-import React from "react";
+
 import useCart from "../../../hooks/useCart";
 import { FaTrash } from "react-icons/fa"; // Importing FaTrash from react-icons
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -46,9 +47,20 @@ const Cart = () => {
         <h2 className="text-3xl text-gray-600 mt-2">
           Total Price: ${totalPrice?.toFixed(2)}
         </h2>
-        <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all">
-          Payment
-        </button>
+        {cart?.length ? (
+          <Link to="/dashboard/payment">
+            <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-all">
+              Payment
+            </button>
+          </Link>
+        ) : (
+          <button
+            disabled
+            className="mt-4 px-6 py-2 bg-blue-300 text-white rounded-md cursor-not-allowed"
+          >
+            Payment
+          </button>
+        )}
       </div>
 
       <div className="overflow-x-auto">
