@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
+import useAdmin from "../../../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [isAdmin] = useAdmin();
   const [cart] = useCart();
 
   const handleLogout = () => {
@@ -31,11 +33,20 @@ const Navbar = () => {
           Order Food
         </Link>
       </li>
-      <li>
-        <Link to="/secret" className="hover:text-yellow-400">
-          Secret
-        </Link>
-      </li>
+      {user && isAdmin && (
+        <li>
+          <Link to="/dashboard/adminHome" className="hover:text-yellow-400">
+            Admin Home
+          </Link>
+        </li>
+      )}
+      {user && !isAdmin && (
+        <li>
+          <Link to="/dashboard/userHome" className="hover:text-yellow-400">
+            User Home
+          </Link>
+        </li>
+      )}
       <li>
         <Link
           to="/dashboard/cart"
