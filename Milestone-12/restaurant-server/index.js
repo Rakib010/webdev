@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 const axios = require("axios");
+=======
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
 require("dotenv").config();
 const express = require("express");
 const app = express();
@@ -6,6 +9,7 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const port = process.env.PORT || 5000;
 
+<<<<<<< HEAD
 //mail-gun
 const formData = require("form-data");
 const Mailgun = require("mailgun.js");
@@ -15,12 +19,15 @@ const mg = mailgun.client({
   key: process.env.MAIL_GUN_API_KEY || "key-yourkeyhere",
 });
 
+=======
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
 // payment method
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 //middleware
 app.use(cors());
 app.use(express.json());
+<<<<<<< HEAD
 app.use(express.urlencoded()); // success payment
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
@@ -41,6 +48,13 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 
 // step-1 - payment initiate
 
+=======
+
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
+
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.bmcuq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -52,7 +66,11 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
+<<<<<<< HEAD
     // await client.connect();
+=======
+    await client.connect();
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
 
     const database = client.db("restaurantDB");
     const menuCollection = database.collection("menu");
@@ -72,7 +90,11 @@ async function run() {
 
     // verify Token middlewares
     const verifyToken = (req, res, next) => {
+<<<<<<< HEAD
       // console.log("inside verify token", req.headers.authorization);
+=======
+      console.log("inside verify token", req.headers.authorization);
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
       if (!req.headers.authorization) {
         return res.status(401).send({ message: "unauthorized access" });
       }
@@ -102,7 +124,11 @@ async function run() {
     app.post("/create-payment-intent", async (req, res) => {
       const { price } = req.body;
       const amount = parseInt(price * 100);
+<<<<<<< HEAD
       //console.log("price", amount);
+=======
+      console.log("price", amount);
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
 
       //Create a PaymentIntent with the order amount and currency
       const paymentIntent = await stripe.paymentIntents.create({
@@ -128,6 +154,7 @@ async function run() {
 
       const deleteResult = await cartCollection.deleteMany(query);
 
+<<<<<<< HEAD
       // send user email about payment confirmation
       mg.messages
         .create(process.env.MAIL_SENDING_DOMAIN, {
@@ -143,6 +170,8 @@ async function run() {
         .then((msg) => console.log(msg)) // logs response data
         .catch((err) => console.error(err)); // logs any error
 
+=======
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
       res.send({ paymentResult, deleteResult });
     });
 
@@ -156,6 +185,7 @@ async function run() {
       res.send(result);
     });
 
+<<<<<<< HEAD
     // ssl-payment
     app.post("/create-ssl-payment", async (req, res) => {
       const payment = req.body;
@@ -262,6 +292,8 @@ async function run() {
       //console.log("isValidPayment", data);
     });
 
+=======
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
     // menu data
     app.get("/menu", async (req, res) => {
       const result = await menuCollection.find().toArray();
@@ -471,10 +503,17 @@ async function run() {
     });
 
     // Send a ping to confirm a successful connection
+<<<<<<< HEAD
     // await client.db("admin").command({ ping: 1 });
     /* console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     ); */
+=======
+    await client.db("admin").command({ ping: 1 });
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
   } finally {
     //await client.close();
   }

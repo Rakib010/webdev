@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import useCart from "../../../hooks/useCart";
 import { FaTrash } from "react-icons/fa"; 
+=======
+
+import useCart from "../../../hooks/useCart";
+import { FaTrash } from "react-icons/fa"; // Importing FaTrash from react-icons
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";

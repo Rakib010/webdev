@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node index.js",
+=======
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,9 +18,13 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+<<<<<<< HEAD
     "form-data": "^4.0.1",
     "jsonwebtoken": "^9.0.2",
     "mailgun.js": "^11.1.0",
+=======
+    "jsonwebtoken": "^9.0.2",
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
     "mongodb": "^6.12.0",
     "stripe": "^17.5.0"
   }

@@ -84,7 +84,11 @@ const router = createBrowserRouter([
         path: "adminHome",
         element: (
           <AdminRoute>
+<<<<<<< HEAD
             <AdminHome />
+=======
+            <AdminHome/>
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
           </AdminRoute>
         ),
       },

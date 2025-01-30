@@ -446,6 +446,7 @@ async function run() {
       }
     );
 
+<<<<<<< HEAD
     // admin state
     app.get("/admin-stat", verifyToken, verifyAdmin, async (req, res) => {
       //get total user,total plants
@@ -517,6 +518,8 @@ async function run() {
       res.send({ totalPlants, totalUser, ...ordersDetails, charData });
     });
 
+=======
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(

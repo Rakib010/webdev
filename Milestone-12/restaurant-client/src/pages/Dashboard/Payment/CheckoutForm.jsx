@@ -59,26 +59,44 @@ const CheckoutForm = () => {
         payment_method: {
           card: card,
           billing_details: {
+<<<<<<< HEAD
             email: user?.email || "anonymous", 
             name: user?.displayName || "anonymous", 
+=======
+            email: user?.email || "anonymous", // Use authenticated user email if available
+            name: user?.displayName || "anonymous", // Use authenticated user name if available
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
           },
         },
       });
 
     if (confirmError) {
+<<<<<<< HEAD
       setError(confirmError.message); 
     } else if (paymentIntent.status === "succeeded") {
       setTransactionId(paymentIntent.id); 
+=======
+      setError(confirmError.message); // Display error if payment confirmation fails
+    } else if (paymentIntent.status === "succeeded") {
+      setTransactionId(paymentIntent.id); // Save transaction ID for reference
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
 
       // Prepare payment data for backend storage
       const payment = {
         email: user.email,
         price: totalPrice,
         transactionId: paymentIntent.id,
+<<<<<<< HEAD
         date: new Date(), 
         cartIds: cart?.map((item) => item._id), 
         menuItemIds: cart?.map((item) => item.menuId), 
         status: "pending", 
+=======
+        date: new Date(), // Capture the current date
+        cartIds: cart?.map((item) => item._id), // Map cart item IDs
+        menuItemIds: cart?.map((item) => item.menuId), // Map menu item IDs
+        status: "pending", // Set initial payment status
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
       };
 
       // Save payment data to the backend
@@ -92,7 +110,11 @@ const CheckoutForm = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="flex justify-center items-center mt-20 bg-gray-100">
+=======
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+>>>>>>> 6798ab54149d5e1818931ac29cc8782967a95b81
       {/* Form container */}
       <div className="bg-white shadow-md rounded-lg p-8 max-w-lg w-full">
         <h2 className="text-2xl font-semibold text-gray-700 text-center mb-6">
