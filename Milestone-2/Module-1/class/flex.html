@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>responsive layout</title>
+    <style>
+      h1 {
+        border: 2px solid tomato;
+        background: orange;
+        width: 30%;
+      }
+      .container {
+        border: 3px solid red;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        border: 2px solid purple;
+      }
+    /*more-flex */
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+    .form-section{
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+         align-items: center; 
+        text-align: center;
+        border: 5px solid pink;
+    }
+
+    input{
+        display: flex;
+        margin-top: 10px;
+        padding: 6px 14px;
+        border-radius: 8px;
+        outline:none;
+        border: 1px solid orange;
+    }
+
+    </style>
+  </head>
+  <body>
+    <h1>Flex-Box</h1>
+    <div class="container">
+      <div class="box">box-1</div>
+      <div class="box">box-2</div>
+      <div class="box">box-3</div>
+      <div class="box">box-1</div>
+      <div class="box">box-2</div>
+      <div class="box">box-3</div>
+      <div class="box">box-1</div>
+      <div class="box">box-2</div>
+      <div class="box">box-3</div>
+      <div class="box">box-1</div>
+      <div class="box">box-2</div>
+      <div class="box">box-3</div>
+    </div>
+
+    <div>
+        <h1>Flex-Box</h1>
+      <nav>
+        <div>
+          <a href="">Home</a>
+          <a href="">profile</a>
+          <a href="">Blog</a>
+          <a href="">about</a>
+        </div>
+        <a href="">Login</a>
+      </nav>
+
+     <div class="form-section">
+        <form action="">
+            <h3>login</h3>
+             <input type="text" required>
+             <input type="password" required>
+              <input type="submit">
+          </form>
+     </div>
+     
+
+
+    </div>
+
+
+  </body>
+</html>

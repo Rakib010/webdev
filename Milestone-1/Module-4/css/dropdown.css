@@ -1,0 +1,39 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+nav >ul{
+    display: flex;
+}
+nav li{
+    margin-left: 10px;
+    padding: 20px;
+}
+ nav li:hover{
+    background-color: rgb(249, 239, 220);
+} 
+/* nav li a:hover{
+    color: rgb(213, 246, 227);
+} */
+/* nested(dropdown) menu styles */
+nav li .drop,.dropmedia,.dropmovie,.dropsong{
+    display: none;
+    position: absolute;
+    padding-left:5px;
+    background-color: rgb(180, 174, 185);
+}
+nav li:hover .drop{  /* nav li:hover > .drop*/
+    display: block;
+}
+nav li:hover  .dropmedia{
+    display: block;
+}
+nav li:hover >.dropmovie{
+    display: block;
+    margin-left: 60px;
+    background-color: #c3bebe;
+}
+nav li:hover > .dropsong{
+    display: block;
+    margin-left: 60px;
+}

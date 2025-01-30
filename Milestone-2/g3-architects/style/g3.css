@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/* font-family: "Work Sans", sans-serif; */
+
+* {
+  /* margin: 0;
+  padding: 0;  */
+  list-style: none;
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* Shared Styles */
+.display-flex {
+  display: flex;
+}
+p {
+  color: rgb(114, 114, 114);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+h2 {
+  color: rgb(19, 19, 19);
+  font-size: 1.6rem;
+  font-weight: 700;
+  /* text-align: left; */
+}
+.bg-color {
+  background: rgba(255, 144, 14, 0.1);
+}
+
+/* Navbar*/
+.navbar {
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-item {
+  margin-right: 40px;
+}
+
+.navbar,
+.banner {
+  max-width: 1260px;
+  margin: 0 auto 80px;
+}
+
+/* Banner-style */
+.banner-content {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.banner-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.btn {
+  background-color: #ff900e;
+  color: white;
+  padding: 10px 15px;
+  font-size: 0.9 rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+}
+.banner-img-container {
+  width: 90%;
+  margin: 0 auto;
+}
+.banner-img {
+  width: 100%;
+}
+
+main {
+  /* max-width: 1260px;
+  margin: 0 auto; */
+}
+.teams {
+  max-width: 90%;
+  margin: 0 auto;
+  /* padding: 0 100px; */
+  display: flex;
+  align-items: center;
+}
+.team-img-container {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.team-img-container img {
+  width: 100%;
+}
+.our-features {
+  width: 40%;
+  margin-left: 50px;
+}
+
+/* Some facts */
+.some-facts {
+  width: 90%;
+  margin: 80px auto;
+}
+.facts-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.fact {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  text-align: center;
+  border: 1px solid #ff900e;
+}
+.fact img {
+  margin-top: 15px;
+}
+
+.fact-number {
+  font-size: 1rem;
+  margin: 5px 0 10px;
+  color: rgb(66, 66, 66);
+}
+.fact-name {
+  margin: 10px 0;
+  font-size: 0.8rem;
+  color: rgb(114, 114, 114);
+}
+
+/* sponsor-info */
+.our-sponsors {
+  width: 90%;
+  margin: 80px auto;
+}
+.sponsor-info {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.sponsors-companies {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  filter: grayscale(100%);
+}
+.sponsors-companies img {
+  width: 150px;
+  width: 120px;
+}
+
+/* feature-card */
+.Features {
+  width: 90%;
+  margin: 80px auto;
+  display: flex;
+  gap: 50px;
+}
+.Features-img {
+  width: 50%;
+}
+
+.Features-img img {
+  width: 100%;
+}
+.Features-text {
+  width: 50%;
+}
+.feature-card {
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.06);
+  background: rgb(255, 255, 255);
+}
+.feature-card h4 {
+  margin: 15px 0;
+  color: rgb(19, 19, 19);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.feature-card p {
+  margin: 10px 0;
+}
+#experience-badge {
+  padding: 40px 40px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  background: rgb(255, 144, 14);
+  margin-left: -30px;
+  margin-top: -120px;
+}
+#experience-year {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+span {
+  font-size: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+/* reponsive another device */
+
+@media screen and (max-width: 576px) {
+  .navbar,
+  .banner, .nav-links {
+    flex-direction: column;
+  }
+ .banner-img{
+  width: 100%;
+ }
+  .teams {
+    flex-direction: column;
+    /* justify-items: center; */
+  }
+  .team-img-container,
+  .facts-container {
+    grid-template-columns: 1fr;
+    /* width: 100%; */
+  }
+  .team-img-container{
+    width: 100%;
+  }
+  .our-features {
+   width: 100%;
+   margin-top: 30px;
+  }
+  .some-facts {
+    /* width: 100%; */
+    text-align: center;
+  }
+ 
+  .Features {
+    flex-direction: column;
+  }
+  .Features-text{
+    width: 100%;
+
+  }
+  .Features-img{
+    width: 100%;
+  }
+  #experience-badge{
+     padding: 15px 15px;
+
+  }
+  .sponsors-companies {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 35px;
+  }
+
+}

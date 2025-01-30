@@ -1,0 +1,9 @@
+.criminal-law {
+  box-sizing: border-box;
+  border: 1px solid rgb(231, 231, 231);
+  background: linear-gradient(
+    180deg,
+    rgb(243, 243, 243),
+    rgba(243, 243, 243, 0) 100%
+  );
+}

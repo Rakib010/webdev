@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Rahim's Family",
+    "image": "https://i.ibb.co/YtD0N94/6.jpg",
+    "story": "Rahim's family survived the biting cold last winter thanks to your generous donations. Warm clothes made all the difference."
+  },
+  {
+    "id": 2,
+    "name": "Ayesha's Village",
+    "image": "https://i.ibb.co/VYSyWpB/7.jpg",
+    "story": "The entire village of Ayesha received blankets and sweaters, bringing smiles to families braving the harsh weather."
+  },
+  {
+    "id": 3,
+    "name": "The Community Effort",
+    "image": "https://i.ibb.co.com/kJqHy7f/R3.jpg",
+    "story": "Over 500 jackets were distributed in rural areas, ensuring that no one was left to face the cold alone."
+  },
+  {
+    "id": 4,
+    "name": "Zahid's Relief",
+    "image": "https://i.ibb.co/3rMpnmM/4.jpg",
+    "story": "With your help, Zahid's Relief brought hope and warmth to underprivileged communities in remote villages."
+  },
+  {
+    "id": 5,
+    "name": "Khadija's Initiative",
+    "image": "https://i.ibb.co.com/yXCRGZt/5.jpg",
+    "story": "Khadija's team brought winter essentials to elderly villagers, ensuring they could stay warm throughout the season."
+  },
+  {
+    "id": 6,
+    "name": "Village Unity Drive",
+    "image": "https://i.ibb.co/V279KTh/IMG-20210110-WA0009.jpg",
+    "story": "Your contributions united our volunteers, enabling us to deliver blankets, food, and smiles to hundreds in need."
+  }
+]

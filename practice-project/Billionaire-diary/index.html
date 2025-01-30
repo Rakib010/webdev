@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billionaire Diary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 ">
+    <!-- Main Wrapper -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-1/4 bg-blue-900 text-white p-6">
+        <h1 class="text-2xl font-bold mb-6">BILLIONAIRE DIARY</h1>
+
+        <!-- Buttons -->
+        <div class="space-y-4 font-semibold  ">
+          <button id="addUser"
+            class="w-full bg-blue-700 hover:bg-blue-800  py-2 rounded"
+          >
+            Add a user (Randomly)
+          </button>
+          <button
+            class="w-full bg-blue-700 hover:bg-blue-800  py-2 rounded"
+          >
+            Double Money
+          </button>
+          <button
+            class="w-full bg-blue-700 hover:bg-blue-800  py-2 rounded"
+          >
+            Sort By Rank (Descending)
+          </button>
+          <button
+            class="w-full bg-blue-700 hover:bg-blue-800  py-2 rounded"
+          >
+            Calculate Entire Wealth
+          </button>
+
+          <hr class="my-4 border-gray-400" />
+
+          <button
+            class="w-full bg-blue-700 hover:bg-blue-800  py-2 rounded"
+          >
+            Show All Billionaires
+          </button>
+          <button
+            class="w-full bg-blue-700 hover:bg-blue-800  py-2 rounded"
+          >
+            Richest by industry (Technology)
+          </button>
+          <button
+            class="w-full bg-blue-700 hover:bg-blue-800  py-2 rounded"
+          >
+            Richest by states (Texas)
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8">
+        <!-- Search and Greeting -->
+        <div class="flex justify-between items-center mb-8">
+          <input
+            class="border-b-2 outline-none  px-2 py-2 bg-transparent border-gray-700"
+            type="text"
+            placeholder="Search"
+          />
+          <h2 class="text-xl font-bold">Hello, User!</h2>
+        </div>
+
+        <!-- Table Section -->
+        <!-- <div class="bg-white shadow-lg rounded-lg p-6">
+          <table class="w-full table-auto border-collapse">
+            <thead>
+              <tr class="border-b">
+                <th class="text-left py-2">Person</th>
+                <th class="text-left py-2">Citizenship</th>
+                <th class="text-left py-2">Industry</th>
+                <th class="text-left py-2">Rank</th>
+                <th class="text-left py-2">Wealth</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="py-2 flex items-center">
+                  Jeff Bezos
+                  <span class="ml-2"
+                    ><img
+                      src="eye-icon.png"
+                      alt="View Icon"
+                      class="w-4 h-4 cursor-pointer"
+                  /></span>
+                </td>
+                <td>United States</td>
+                <td>Technology</td>
+                <td>3</td>
+                <td>$124,317.31</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2 flex items-center">
+                  Sergey Brin
+                  <span class="ml-2"
+                    ><img
+                      src="eye-icon.png"
+                      alt="View Icon"
+                      class="w-4 h-4 cursor-pointer"
+                  /></span>
+                </td>
+                <td>United States</td>
+                <td>Technology</td>
+                <td>12</td>
+                <td>$80,526.39</td>
+              </tr>
+              <tr class="border-b">
+                <td class="py-2 flex items-center">
+                  Murat Vargi
+                  <span class="ml-2"
+                    ><img
+                      src="eye-icon.png"
+                      alt="View Icon"
+                      class="w-4 h-4 cursor-pointer"
+                  /></span>
+                </td>
+                <td>Turkey</td>
+                <td>Telecom</td>
+                <td>2495</td>
+                <td>$1,029.57</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="border-t">
+                <td colspan="4" class="text-right font-bold py-2">Total</td>
+                <td class="font-bold py-2">$205,873.27</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div> -->
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

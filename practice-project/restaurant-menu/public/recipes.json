@@ -1,0 +1,100 @@
+[
+  {
+    "recipe_image": "https://images.unsplash.com/photo-1553621042-f6e147245754",
+    "recipe_id": 1,
+    "recipe_name": "Grilled Chicken Salad",
+    "short_description": "A healthy and tasty grilled chicken salad with fresh vegetables.",
+    "ingredients": [
+      "250 g chicken breast",
+      "100 g lettuce",
+      "50 g cherry tomatoes",
+      "30 ml olive oil",
+      "20 ml lemon juice",
+      "Salt to taste",
+      "Pepper to taste"
+    ],
+    "preparing_time": "25 ",
+    "calories": "350 "
+  },
+  {
+    "recipe_image": "https://plus.unsplash.com/premium_photo-1673580742890-4af144293960?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "recipe_id": 2,
+    "recipe_name": "Spaghetti Carbonara",
+    "short_description": "Classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
+    "ingredients": [
+      "200 g spaghetti",
+      "100 g pancetta",
+      "2 large eggs",
+      "50 g parmesan cheese",
+      "1 clove garlic",
+      "Salt to taste",
+      "Pepper to taste"
+    ],
+    "preparing_time": "30 ",
+    "calories": "400 "
+  },
+  {
+    "recipe_image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc",
+    "recipe_id": 3,
+    "recipe_name": "Beef Stir-fry",
+    "short_description": "Quick and easy stir-fried beef with vegetables in a savory sauce.",
+    "ingredients": [
+      "300 g beef strips",
+      "100 g bell peppers",
+      "50 g onions",
+      "20 ml soy sauce",
+      "10 ml sesame oil",
+      "1 tsp garlic",
+      "1 tsp ginger"
+    ],
+    "preparing_time": "20 ",
+    "calories": "420 "
+  },
+  {
+    "recipe_image": "https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "recipe_id": 4,
+    "recipe_name": "Vegetable Curry",
+    "short_description": "A flavorful and spicy vegetable curry with coconut milk.",
+    "ingredients": [
+      "200 g potatoes",
+      "150 g carrots",
+      "100 g peas",
+      "200 ml coconut milk",
+      "30 g curry powder",
+      "1 clove garlic",
+      "Salt to taste"
+    ],
+    "preparing_time": "40 ",
+    "calories": "300 "
+  },
+  {
+    "recipe_image": "https://images.unsplash.com/31/RpgvvtYAQeqAIs1knERU_vegetables.jpg?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "recipe_id": 5,
+    "recipe_name": "Chocolate Chip Cookies",
+    "short_description": "Classic homemade cookies filled with chocolate chips.",
+    "ingredients": [
+      "200 g flour",
+      "100 g sugar",
+      "100 g butter",
+      "1 egg",
+      "100 g chocolate chips"
+    ],
+    "preparing_time": "35 ",
+    "calories": "250 "
+  },
+  {
+    "recipe_image": "https://plus.unsplash.com/premium_photo-1671403964040-3fa56d33f44b?q=80&w=1901&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "recipe_id": 6,
+    "recipe_name": "Mango Smoothie",
+    "short_description": "A refreshing smoothie made with fresh mango and yogurt.",
+    "ingredients": [
+      "200 g fresh mango",
+      "150 ml yogurt",
+      "50 ml milk",
+      "1 tbsp honey",
+      "Ice cubes"
+    ],
+    "preparing_time": "10 ",
+    "calories": "180 "
+  }
+]

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 3px solid red;
+        }
+        /* overflow hidden jeita ashe oita hide hoye jabe */
+         /* overflow auto use kora best bcz jei smy ja lagbe tai korbe */
+         /* overflow scroll korle scroll asbe  */
+         .box{
+            /* overflow: hidden; */  
+            /* overflow-y: scroll; */
+            overflow: auto; 
+        }
+        /* ellipsis hocche lekha ta jodi width theke bro hoye jay tokon se width projont lekha rekha baki ta dot dot bujabe  */
+        /* nowrap hocche ek line hoye jabe */
+        .ellipsis{
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            b
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero commodi dolore magni quo, quae possimus?</p>
+    </header>
+    <section>
+        <div id="box-1" class="box">
+            <h3>My Text Box 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptate explicabo tenetur eum cumque quod fuga exercitationem itaque. Veritatis quia fugiat doloribus minus doloremque! Commodi molestias excepturi odit voluptatum iusto quasi est neque a nam, illo ullam dicta ipsam itaque laboriosam rerum enim asperiores ea, cupiditate eos error dolores expedita id! Corrupti aut non perferendis? Pariatur, deleniti impedit accusantium fugit facilis est eaque, natus libero cupiditate ab repudiandae ex vel ad laudantium reiciendis possimus rerum illum nostrum quo! Expedita qui corrupti nulla quae, labore quasi quisquam sapiente voluptatum dolorem architecto. Corporis nemo pariatur expedita dolorum quasi sapiente enim soluta culpa facere perferendis optio nam veniam consectetur aliquam unde repudiandae, fugit sunt? Dicta odio earum, debitis perspiciatis unde ipsa, magni nostrum alias accusantium facilis quidem quae aliquid, deserunt voluptatem. Corrupti repellendus totam culpa saepe delectus voluptatem vero, consequatur laudantium obcaecati minus neque enim omnis nesciunt eum quas veniam ex soluta eos porro harum molestias quis expedita quaerat quibusdam. Quibusdam suscipit perferendis voluptas non aperiam illo consectetur cum autem velit dolore labore et, soluta eius aliquam? Debitis eaque excepturi explicabo nam ex velit inventore fugit dignissimos deserunt quas et, incidunt a modi suscipit quod natus quidem, veniam ipsum impedit, quae doloremque nisi?</p>
+        </div>
+        <div class="box">
+            <h3>My Text Box 2</h3>
+            <p>Ipsa blanditiis magnam, error mollitia voluptatibus repellendus incidunt temporibus veniam, maiores modi iste, placeat hic! Ea illum facilis blanditiis id. Rerum quasi a commodi officia aperiam quaerat quas soluta, ducimus dolorum. Ipsum iure laudantium expedita voluptatum esse? Excepturi quo unde magni corporis id molestias doloremque possimus quaerat doloribus deserunt vel veniam, modi suscipit ex libero deleniti quae fuga nam delectus esse. Rem nobis vero dolorum incidunt modi blanditiis doloremque sequi molestiae. Sequi molestiae accusamus architecto fuga repudiandae magnam mollitia excepturi animi sed, fugiat labore aspernatur aperiam pariatur minima tempora. Est perspiciatis nam exercitationem fugit repudiandae laboriosam odit accusantium veniam temporibus mollitia asperiores minus placeat atque error repellat labore pariatur ea, eos in. Suscipit facere dolorum et molestias beatae? Corrupti iusto explicabo debitis quas nulla itaque, quibusdam praesentium nihil dicta illo odio earum, voluptate unde, at alias officia id libero rerum aliquam atque. Nam odio nostrum atque molestiae aliquam officia eveniet obcaecati, aliquid esse aut magnam non provident excepturi saepe fugiat explicabo, doloremque beatae repudiandae, ratione ab. Nobis ad sunt ut beatae labore. Sunt animi deleniti magnam, fugit nihil et quos a debitis velit neque recusandae maiores voluptatem sint doloremque tempore natus facilis, ipsum totam laudantium mollitia sequi assumenda quod minima!</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.parant{
+    padding: 25px; 
+    background-color: blanchedalmond;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    height: 350px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.child{
+    border: 2px solid rgb(188, 134, 238);
+    background: rgb(125, 225, 168);
+    padding: 20px;
+    font-size: 28px;
+    margin: 10px 0;
+    display: inline;
+}

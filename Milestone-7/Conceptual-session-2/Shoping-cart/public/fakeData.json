@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "image": "https://images.unsplash.com/photo-1511376777868-611b54f68947",
+      "description": "High-quality wireless headphones with noise cancellation and up to 20 hours of battery life.",
+      "price": "99.99",
+      "category": "Electronics",
+      "isFeature": true
+    },
+    {
+      "id": 2,
+      "name": "Leather Office Chair",
+      "image": "https://images.unsplash.com/photo-1567016542060-2b5c43bd94af",
+      "description": "Ergonomic leather office chair with adjustable height and lumbar support.",
+      "price": "199.99",
+      "category": "Furniture",
+      "isFeature": false
+    },
+    {
+      "id": 3,
+      "name": "Smart Watch",
+      "image": "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b",
+      "description": "Smart watch with heart rate monitor, GPS, and fitness tracking features.",
+      "price": "149.99",
+      "category": "Wearables",
+      "isFeature": true
+    },
+    {
+      "id": 4,
+      "name": "Portable Blender",
+      "image": "https://images.unsplash.com/photo-1617191512009-6c6fb307ee9e",
+      "description": "Compact and portable blender, perfect for smoothies on the go with a rechargeable battery.",
+      "price": "49.99",
+      "category": "Home Appliances",
+      "isFeature": false
+    },
+    {
+      "id": 5,
+      "name": "Mountain Bike",
+      "image": "https://images.unsplash.com/photo-1558980664-60c1146ae773",
+      "description": "Durable mountain bike with 21-speed gear system, perfect for off-road cycling.",
+      "price": "499.99",
+      "category": "Sports",
+      "isFeature": true
+    }
+  ]
+}

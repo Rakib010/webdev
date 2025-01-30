@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <h1>Exploring Event Bubble</h1>
+    <!--    <section id="list-container">
+      <ul id="list-ul">
+        <li id="item-1">Lorem, ipsum.</li>
+        <li id="item-2">Sapiente, cum.</li>
+        <li id="item-3">Voluptas, vel.</li>
+        <li id="item-4">Quis, temporibus.</li>
+        <li id="item-5">Sint, illo.</li>
+        <li id="item-6">Alias, cupiditate.</li>
+      </ul>
+    </section> -->
+    <section>
+      <h1>Explore Event Delegate</h1>
+      <ul id="list-container">
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Necessi,soluta volupta?</li>
+        <li class="item">Nemo, quis ullam!</li>
+        <li class="item">Architecto, id consequu!</li>
+        <li class="item">Quibusdam, earum dolor.</li>
+        <li class="item">Quod, exercitationem tenetur.</li>
+      </ul>
+      <button id="btn-add-item">Add Item</button>
+    </section>
+
+    <script>
+      document
+        .getElementById("item-2")
+        .addEventListener("click", function (event) {
+          console.log("clicked");
+          event.stopPropagation(); //bubble stop
+          //   event.stopImmediatePropagation();
+        });
+      document.getElementById("list-ul").addEventListener("click", function () {
+        console.log("ul");
+      });
+      document
+        .getElementById("list-container")
+        .addEventListener("click", function () {
+          console.log("section-clicked");
+        });
+      // document.getElementById("body").addEventListener("click", function () {
+      //   console.log("body clicked");
+      // });
+
+      //Event Delegate
+      const items = document.getElementsByClassName("item");
+      for (const item of items) {
+        item.addEventListener("click", function (event) {
+          event.target.parentNode.removeChild(event.target);
+        });
+      }
+
+      const listContainer = document
+        .getElementById("list-container")
+        .addEventListener("click", function (event) {
+          event.target.parentNode.removeChild(event.target);
+        });
+
+      document
+        .getElementById("btn-add-item")
+        .addEventListener("click", function () {
+          const listContainer = document.getElementById("list-container");
+          const li = document.createElement("li");
+          li.innerText = "New Item added";
+          li.classList.add("item");
+          listContainer.appendChild(li);
+        });
+    </script>
+  </body>
+</html>

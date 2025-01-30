@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "treatment": "Teeth Whitening",
+    "image": "https://example.com/images/teeth-whitening.jpg",
+    "description": "Teeth whitening is a popular cosmetic dental procedure aimed at removing stains and discoloration, leaving your teeth several shades brighter. It’s a quick, non-invasive, and highly effective treatment, ideal for anyone looking to enhance their smile. Regular whitening sessions can boost your confidence, making it a great option for special occasions or everyday life.",
+    "cost": 120
+  },
+  {
+    "id": 2,
+    "treatment": "Dental Cleaning",
+    "image": "https://example.com/images/dental-cleaning.jpg",
+    "description": "Dental cleaning is essential for maintaining healthy teeth and gums. It involves removing plaque, tartar, and debris from hard-to-reach areas. Regular cleanings help prevent cavities, gum disease, and bad breath. This procedure ensures your oral hygiene is at its best while keeping your teeth strong and healthy for years to come.",
+    "cost": 80
+  },
+  {
+    "id": 3,
+    "treatment": "Orthodontics (Braces)",
+    "image": "https://example.com/images/orthodontics.jpg",
+    "description": "Orthodontic treatment, including braces or aligners, is designed to correct misaligned teeth and improve your bite. It enhances aesthetics and ensures proper functionality of your teeth. This long-term treatment can prevent jaw issues and provide you with a straight, confident smile. It’s tailored to individual needs for the best results.",
+    "cost": 1500
+  },
+  {
+    "id": 4,
+    "treatment": "Root Canal Therapy",
+    "image": "https://example.com/images/root-canal.jpg",
+    "description": "Root canal therapy is a restorative dental procedure used to save teeth that are severely damaged or infected. It involves removing the infected pulp, cleaning the canals, and sealing them to prevent further issues. This treatment relieves pain, restores the tooth’s functionality, and helps maintain your natural smile without the need for extraction.",
+    "cost": 300
+  },
+  {
+    "id": 5,
+    "treatment": "Dental Implants",
+    "image": "https://example.com/images/dental-implants.jpg",
+    "description": "Dental implants are a permanent solution for replacing missing teeth. These titanium posts are surgically placed in the jawbone to act as artificial roots, providing a sturdy foundation for crowns, bridges, or dentures. Implants restore chewing ability, improve speech, and maintain facial structure while offering a natural look and feel.",
+    "cost": 2000
+  },
+  {
+    "id": 6,
+    "treatment": "Tooth Extraction",
+    "image": "https://example.com/images/tooth-extraction.jpg",
+    "description": "Tooth extraction is the removal of a tooth that is damaged, decayed, or causing crowding. Performed under local anesthesia, it ensures minimal discomfort. Extractions may be necessary to protect the health of surrounding teeth and prepare for orthodontic treatments. Recovery is quick, and options for tooth replacement are available.",
+    "cost": 100
+  },
+  {
+    "id": 7,
+    "treatment": "Dental Crowns",
+    "image": "https://example.com/images/dental-crowns.jpg",
+    "description": "Dental crowns are custom caps placed over damaged or weakened teeth to restore their shape, size, and strength. They provide long-lasting protection and a natural appearance. Crowns are used to cover implants, hold dental bridges in place, or protect teeth after root canal therapy, ensuring durability and improved oral health.",
+    "cost": 500
+  },
+  {
+    "id": 8,
+    "treatment": "Veneers",
+    "image": "https://example.com/images/veneers.jpg",
+    "description": "Veneers are thin shells made of porcelain or composite resin that are bonded to the front of teeth. They enhance the shape, size, and color of your teeth, providing a perfect smile. Ideal for fixing chipped, stained, or slightly misaligned teeth, veneers are a minimally invasive and highly effective cosmetic solution.",
+    "cost": 900
+  }
+]

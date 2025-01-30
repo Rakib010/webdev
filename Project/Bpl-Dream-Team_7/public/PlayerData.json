@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Virat Kohli",
+    "image": "https://i.ibb.co.com/fxTH9kR/koli.jpg",
+    "country": "India",
+    "role": "Batsman",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Medium",
+    "price": "9000"
+  },
+  {
+    "id": 2,
+    "name": "Steve Smith",
+    "image": "https://i.ibb.co.com/N2dQrv4/smith.jpg",
+    "country": "Australia",
+    "role": "Batsman",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Leg Spin",
+    "price": "8000"
+  },
+  {
+    "id": 3,
+    "name": "Kane Williamson",
+    "image": "https://i.ibb.co.com/nQkY83Q/03kane.jpg",
+    "country": "New Zealand",
+    "role": "Batsman",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Off Spin",
+    "price": "7000"
+  },
+  {
+    "id": 4,
+    "name": "Ben Stokes",
+    "image": "https://i.ibb.co.com/235FyJB/04ben.jpg",
+    "country": "England",
+    "role": "All-Rounder",
+    "batting_style": "Left-Hand-Bat",
+    "bowling_style": "Right-Arm Fast Medium",
+    "price": "9000"
+  },
+  {
+    "id": 5,
+    "name": "Babar Azam",
+    "image": "https://i.ibb.co.com/hDRZCZw/04Babar.jpg",
+    "country": "Pakistan",
+    "role": "Batsman",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Off Spin",
+    "price": "6000"
+  },
+  {
+    "id": 6,
+    "name": "Pat Cummins",
+    "image": "https://i.ibb.co.com/1MTPm4r/05pat.jpg",
+    "country": "Australia",
+    "role": "Bowler",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Fast",
+    "price": "5000"
+  },
+  {
+    "id": 7,
+    "name": "Rohit Sharma",
+    "image": "https://i.ibb.co.com/KhShRMt/sharma.jpg",
+    "country": "India",
+    "role": "Batsman",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Off Spin",
+    "price": "9000"
+  },
+  {
+    "id": 8,
+    "name": "Joe Root",
+    "image": "https://i.ibb.co.com/jMF6nhx/root.jpg",
+    "country": "England",
+    "role": "Batsman",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Off Spin",
+    "price": "7500"
+  },
+  {
+    "id": 9,
+    "name": "Shakib Al Hasan",
+    "image": "https://i.ibb.co.com/jDYKHnm/sakib.jpg",
+    "country": "Bangladesh",
+    "role": "All-Rounder",
+    "batting_style": "Left-Hand-Bat",
+    "bowling_style": "Left-Arm Orthodox Spin",
+    "price": "8500"
+  },
+  {
+    "id": 10,
+    "name": "Jasprit Bumrah",
+    "image": "https://i.ibb.co.com/WgfM1Mb/jaspit.jpg",
+    "country": "India",
+    "role": "Bowler",
+    "batting_style": "Right-Hand-Bat",
+    "bowling_style": "Right-Arm Fast",
+    "price": "6000"
+  }
+]

@@ -1,0 +1,195 @@
+function initProductOptions(exports, options){
+	const MAX_FILE_UPLOAD_SIZE = options.maxFileUploadSize;
+
+	function removeNoImages(){
+		for (let i=1; i<=20; i++){
+			if (document.getElementById('oimage_' + i)){
+				if (document.getElementById('oimage_' + i).innerHTML.length == 0){
+					document.getElementById('oimage_' + i).className = 'nooptionimage';
+				}
+			}
+		}
+	}
+
+	function uploading(input, optionid, prodid){
+		productForm = document.product;
+
+		var files = input.files;
+		for (var x in files){
+			if (files[x].size >= (MAX_FILE_UPLOAD_SIZE * 1024 * 1024)){
+				input.setCustomValidity(`Selected image is too large, the maximum file size is ${MAX_FILE_UPLOAD_SIZE}MB.`)
+				productForm.reportValidity();
+				return;
+			}
+			input.setCustomValidity('');
+		}
+
+		document.getElementById('oimage_' + optionid).style.display = 'none';
+
+		document.getElementById('optionSpinner' + optionid).style.display = 'inline-block';
+
+		productForm.action = 'index.asp?function=OPTIONIMAGE&fn=UPLOAD&optionid=' + optionid + '&prodid='+ prodid;
+		productForm.enctype = 'multipart/form-data';
+		productForm.encoding = 'multipart/form-data';
+
+		productForm.submit();
+	}
+
+	function optionimagedelete(optionid, prodid){
+		productForm = document.product;
+
+		productForm.action = 'index.asp?function=OPTIONIMAGE&fn=DELETE&optionid=' + optionid + '&prodid='+ prodid;
+
+		productForm.submit();
+	}
+
+	function setRadioVariantData(el, name){
+		document.querySelector('input[name="variant_' + CSS.escape(name) + '"]').value = el.value	
+	}
+
+	function ekmValidProductOptions(){
+		var hasErrored = false; 
+
+		for (let i=1; i <= 20; i++){
+			var optionsValidate = document.getElementById('optionsValidate_' + i);
+			var options = document.getElementById('options_' + i);
+			var optionErrored = false
+
+			if (options){
+				if (optionsValidate){
+					if (optionsValidate.value == 'ForceChoice'){ 
+						if (options.value == '[INVALIDCHOICE]'){
+							options.style.backgroundColor = '#FCC9C6';
+							optionErrored = hasErrored = true;
+							if (options.options.length > 0){
+								options.options[0].style.backgroundColor = '#FCC9C6';
+							}
+						} 
+						else {
+							options.style.backgroundColor = '#EEEEEE';
+						}
+					}
+
+					if (optionsValidate.value == 'NotEmpty'){
+						if (options.type == 'file'){
+							if (document.getElementById('_EKM_OPTIONINPUT_' + i).innerHTML !== ''){
+								options = document.getElementById('_EKM_OPTIONINPUT_' + i).getElementsByTagName('input')[0];
+							}
+
+							if (options.value.length == 0){
+								options.parentNode.className = options.parentNode.className + ' optionImageEmpty';
+								if (document.getElementById('optionsValidate_' + i).getAttribute('data-validation') === 'true'){
+									options.parentNode.style.backgroundColor = 'rgb(252, 201, 198)';
+									options.style.backgroundColor = 'rgb(252, 201, 198)';
+								}
+								optionErrored = hasErrored = true;
+							}
+						} 
+						else {
+							if (options.value.length == 0){
+								options.style.backgroundColor = '#FCC9C6';
+								optionErrored = hasErrored = true;
+							} 
+							else {
+								options.style.backgroundColor = '#EEEEEE';
+							}
+						}
+					}
+				}
+				if (options.hasAttribute('pattern')){
+					if (!options.validity.patternMismatch){
+						if (!optionErrored){
+							options.style.backgroundColor = '#EEEEEE';
+							options.setCustomValidity('');
+						}
+					}
+					else {
+						options.setCustomValidity(options.dataset.patternValidationMsg);
+						options.style.backgroundColor = '#FCC9C6';
+						optionErrored = hasErrored = true;
+						options.reportValidity();
+					}
+				}
+			}
+
+		}
+
+		if (hasErrored) return false;
+	}
+
+	/**
+	 * @typedef {Object} DateInterval
+	 * @property {Date|null} - The date of the minimum value
+	 * @property {Date|null} - The date of max value or null
+	 */
+
+	/**
+	 * Parses a subset of the ISO8601 time interval to get a min and max dates.
+	 * @param {String} input - An ISO8601 Time interval.
+	 * @return {DateInterval} [description]
+	 * @example
+	 * // Given that the current date is 2021-10-29
+	 * // returns {min: new Date('2021-10-29'), max: new Date('2021-12-31')}
+	 * parseDateInterval('P0D/2021-12-31');
+	 * @example
+	 * // Given that the current date is 2021-10-29
+	 * // returns {min: new Date('2021-10-22'), max: new Date('2021-11-05')}
+	 * parseDateInterval('-P2D/P7D');
+	 * @example
+	 * // Given that the current date is 2021-10-29
+	 * // returns {min: null, max: new Date('2021-11-05')}
+	 * parseDateInterval('/P7D');
+	 * @example
+	 * // Given that the current date is 2021-10-29
+	 * // returns {min: new Date('2021-11-05'), max: null}
+	 * parseDateInterval('P7D');
+	 */
+	function parseDateInterval(input){
+		const [minPart, maxPart] = input.split('/');
+		const [min, max] = [minPart, maxPart].map(part => {
+			if (!part) return null;
+			if (part[0] === 'P' || part.slice(0, 2) === '-P'){
+				let [, sign, days] = /^(-)?P(\d+)D$/.exec(part);
+				days = parseInt(days, 10);
+				if (sign === '-') days *= -1;
+				let now = new Date();
+				now.setDate(now.getDate() + days);
+				return now;
+			}
+			return new Date(part);
+		});
+		return {min, max};
+	}
+
+	/**
+	 * Gets the date part without the time from a date as an iso string.
+	 * @param {Date} date - The date object to get the date part from.
+	 * @return {String} The ISO8601 data part of the passed date object.
+	 */
+	function getISODate(date){
+		return date.toISOString().split('T')[0];
+	}
+
+	/**
+	 * Sets up the min and max values for any date options.
+	 */
+	function setupDateOptions(){
+		const inputs = [...document.querySelectorAll('input[type="date"][name^="options_"]')]
+		inputs.forEach(input => {
+			const interval = parseDateInterval(input.dataset.interval);
+			if (interval.min) input.setAttribute('min', getISODate(interval.min));
+			if (interval.max) input.setAttribute('max', getISODate(interval.max));
+		});
+	}
+
+	window.addEventListener('DOMContentLoaded', () => {
+		removeNoImages();
+		setupDateOptions();
+	});
+
+	exports.removeNoImages = removeNoImages;
+	exports.uploading = uploading;
+	exports.optionimagedelete = optionimagedelete;
+	exports.setRadioVariantData = setRadioVariantData;
+	exports.ekmValidProductOptions = ekmValidProductOptions;
+}

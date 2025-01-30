@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Comment</title>
+  </head>
+  <body>
+    <h1>Please Add Your Comment</h1>
+    <div id="cmnt-container">
+      <!-- <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis earum
+        voluptates nam ullam omnis vero rerum enim quasi animi distinctio!
+      </p> -->
+    </div>
+    <div>
+      <textarea name="" id="new-cmnt" cols="50" rows="10"></textarea>
+      <br />
+      <button id="post-btn">Post</button>
+    </div>
+    <script>
+      //step-1 add eventlistener
+
+      document
+        .getElementById("post-btn")
+        .addEventListener("click", function () {
+          //step-2
+          const newCmt = document.getElementById("new-cmnt");
+          const addNewCmnt = newCmt.value;
+
+          //step-3
+          //1.get the comment conatiner
+          //2.create a new element (p-tag)
+          //3.set the text of the cooment as innerText of the p tag
+          //4.add the tag using appendchild
+          const cmntContainer = document.getElementById("cmnt-container");
+          const p = document.createElement("p");
+          p.innerText = addNewCmnt;
+          cmntContainer.appendChild(p);
+
+          //step-4 : clear the text area
+          newCmt.value = "";
+        });
+    </script>
+  </body>
+</html>

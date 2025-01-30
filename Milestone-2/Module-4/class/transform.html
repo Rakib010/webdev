@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform & Transition</title>
+    <style>
+      .container,
+      .inner {
+        width: 200px;
+        height: 200px;
+        margin-left: 50px;
+      }
+      .container {
+        background-color: rgb(157, 205, 26);
+        border: 2px solid red;
+      }
+      .inner {
+        /* transform: scale(0.5,0.4) rotate(-45deg); */
+        /* transform: scale(0.5) translateX(-50px) translateY(50px); */
+        background-color: blueviolet;
+        border: 2px solid purple;
+        transition: ease-in-out 10s;
+      }
+      /* transition use -> property name | duration | easing function | delay */
+      .inner:hover {
+        width: 400px;
+        /* transition: ease-in-out .8s; */
+        transform: rotate(-45deg) scale(.5) translateX(50px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      container 1
+      <div class="inner">Inner 1</div>
+    </div>
+    <div class="container">
+      container 2
+      <div class="inner">Inner 2</div>
+    </div>
+    <div class="container">
+      container 3
+      <div class="inner">Inner 3</div>
+    </div>
+
+    <div>
+      <ul>
+        <li>transform : Change the shape this is a css style property name</li>
+        <li>
+          translate : it is a value of the transform style rule. this means you
+          move either x, or y or both axis
+        </li>
+        <li>
+          Transition : how long it will take to do change of the shape or color
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
