@@ -1,4 +1,7 @@
 "use client";
+
+import { registerUser } from "../actions/products/auth/registerUser";
+
 export default function RegisterPage() {
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -6,6 +9,9 @@ export default function RegisterPage() {
     const username = form.username.value;
     const password = form.password.value;
     const payload = { username, password };
+    console.log(payload);
+    const result = await registerUser(payload);
+    //console.log(result)
   };
 
   return (
