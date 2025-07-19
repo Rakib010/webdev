@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate BD</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans">
+    <!-- navbar start -->
+    <header class="sticky top-0 backdrop-blur-xl opacity-90">
+      <div class="bg-[#ede4f3] rounded-lg">
+        <nav class="w-10/12 mx-auto flex lg:flex-row flex-col-reverse justify-between items-center py-5">
+          <button
+            id="blog-btn"
+            class="text-2xl font-semibold bg-[#B4F461] py-3 px-5 rounded-lg"
+          >
+            Blog
+          </button>
+          <div class="flex items-center my-2">
+            <img class="mr-4" src="./assets/logo.png" alt="" />
+            <h3 class="font-semibold text-xl">Donate Bangladesh</h3>
+          </div>
+          <div class="flex items-center">
+            <img class="mr-4" src="./assets/coin.png" alt="" />
+            <!-- less-amount -->
+            <p id="less-amount" class="text-xl font-semibold">5500</p>
+            <span class="text-xl font-semibold ml-2">BDT</span>
+          </div>
+        </nav>
+      </div>
+      <!-- Donation & History Button -->
+      <div class="flex justify-center gap-6 p-5">
+        <button
+          id="donate-div"
+          class="bg-[#B4F461] py-3 px-6 font-semibold text-xl rounded-lg border"
+        >
+          Donation
+        </button>
+        <button
+          id="history-btn"
+          class="font-semibold text-xl py-3 px-6 rounded-lg border"
+        >
+          History
+        </button>
+      </div>
+    </header>
+    <!-- main section -->
+    <main class="w-10/12 mx-auto">
+      <!-- Card 1 -->
+      <div
+        id="card-info"
+        class="grid lg:grid-cols-2 gap-8 mb-10 mt-10 p-5 rounded-lg border-2"
+      >
+        <div>
+          <img src="./assets/noakhali.png" alt="Album" />
+        </div>
+        <!-- Donate text -->
+        <div>
+          <div
+            class="flex items-center gap-3 bg-[#1111110D] w-32 p-2 rounded-lg"
+          >
+            <img src="./assets/coin.png" alt="" />
+            <p id="add-taka" class="font-semibold">0</p>
+            <span class="font-semibold">BDT</span>
+          </div>
+          <h2 id="h2-tag" class="card-title my-4">
+            Donate for Flood at Noakhali, Bangladesh
+          </h2>
+          <p>
+            The recent floods in Noakhali have caused significant damage to
+            homes infrastructure. Your donation will help provide essential
+            supplies and to those affected by this disaster. Every contribution,
+            big or small, makes difference. Please join us in supporting the
+            relief efforts and making a positive impact on the lives of those in
+            need.
+          </p>
+          <input
+            id="input"
+            class="w-full py-2 px-2 border-2 outline-none rounded-lg mt-4"
+            type="number"
+            placeholder="Write Donation Amount"
+          />
+          <button
+            id="donate-btn1"
+            class="w-full bg-[#B4F461] py-3 rounded-lg text-xl font-semibold mt-6"
+          >
+            Donate Now
+          </button>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div
+        id="card-info2"
+        class="grid lg:grid-cols-2 gap-8 mb-10 p-5 rounded-lg border-2"
+      >
+        <div>
+          <img src="./assets/feni.png" alt="Album" />
+        </div>
+        <!-- Donate text -->
+        <div>
+          <div
+            class="flex items-center gap-3 bg-[#1111110D] w-32 p-2 rounded-lg"
+          >
+            <img src="./assets/coin.png" alt="" />
+            <p id="add-taka2" class="font-semibold">600</p>
+            <span class="font-semibold">BDT</span>
+          </div>
+          <h2 id="h2-tag2" class="card-title my-4">
+            Donate for Flood Relief in Feni,Bangladesh
+          </h2>
+          <p>
+            The recent floods in Feni have devastated local communities, leading
+            to severe disruption and loss. Your generous donation will help
+            provide immediate aid, including food, clean water, and medical
+            supplies, to those affected by this calamity. Together, we can offer
+            crucial support and help rebuild lives in the aftermath of this
+            disaster. Every contribution counts towards making a real
+            difference. Please consider donating today to assist those in urgent
+            need.
+          </p>
+          <input
+            id="input2"
+            class="w-full py-2 px-2 border-2 outline-none rounded-lg mt-4"
+            type="number"
+            placeholder="Write Donation Amount"
+          />
+          <button
+            id="donate-btn2"
+            class="w-full bg-[#B4F461] py-3 rounded-lg text-xl font-semibold mt-6"
+          >
+            Donate Now
+          </button>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div
+        id="card-info3"
+        class="grid lg:grid-cols-2 gap-8 mb-10 p-5 rounded-lg border-2"
+      >
+        <div>
+          <img src="./assets/quota-protest.png" alt="Album" />
+        </div>
+        <!-- Donate text -->
+        <div>
+          <div
+            class="flex items-center gap-3 bg-[#1111110D] w-32 p-2 rounded-lg"
+          >
+            <img src="./assets/coin.png" alt="" />
+            <p id="add-taka3" class="font-semibold">2400</p>
+            <span class="font-semibold">BDT</span>
+          </div>
+          <h2 id="h2-tag3" class="card-title my-4">
+            Aid for Injured in the Quota Movement
+          </h2>
+          <p>
+            The recent Quota movement has resulted in numerous injuries and
+            significant hardship for many individuals. Your support is crucial
+            in providing medical assistance, rehabilitation, and necessary
+            supplies to those affected. By contributing, you help ensure that
+            injured individuals receive the care and support they need during
+            this challenging time. Every donation plays a vital role in
+            alleviating their suffering and aiding in their recovery. Please
+            consider making a donation to support these brave individuals in
+            their time of need.
+          </p>
+          <input
+            id="input3"
+            class="w-full py-2 px-2 border-2 outline-none rounded-lg mt-4"
+            type="number"
+            placeholder="Write Donation Amount"
+          />
+          <!-- <p id="income-error" class="text-red-500 text-xs mt-1 hidden">
+            ⚠️ Invalid income!
+          </p> -->
+
+          <button
+            id="donate-btn3"
+            class="w-full bg-[#B4F461] py-3 rounded-lg text-xl font-semibold mt-6"
+          >
+            Donate Now
+          </button>
+        </div>
+      </div>
+
+      <!-- History add -->
+      <div id="history-section" class="hidden">
+        <div id="history-items" class=""></div>
+      </div>
+
+      <!-- Open the modal using ID.showModal() method -->
+      <button class="btn hidden" onclick="my_modal_5.showModal()">
+        open modal
+      </button>
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div
+          class="bg-[#f1eef7] flex flex-col items-center p-16 rounded-md shadow-lg"
+        >
+          <h1 class="text-3xl font-bold">Congrats!</h1>
+          <img class="mt-4" src="./assets/coin.png" alt="" />
+          <p class="py-4 font-semibold">You Have Donated for Humankind</p>
+          <p class="font-bold">Successfully</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close Confirmation</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/cardinfo.js"></script>
+    <script src="./js/calculate.js"></script>
+  </body>
+</html>
